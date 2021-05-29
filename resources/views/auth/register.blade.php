@@ -1,13 +1,18 @@
-@extends('layouts.app')
+@extends('admin.layouts.auth')
 
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">{{ __('Register') }}</div>
 
                 <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-6 offset-md-4 mb-4 pb-3">
+                            <h2>Donor Registration</h2>
+
+                        </div>
+                    </div>
                     <form method="POST" action="{{ route('register') }}">
                         @csrf
 
@@ -76,13 +81,42 @@
                             </div>
                         </div>
 
+                       <div class="form-row ">
+                           <div class="col-md-6 offset-md-4 text-left">
+                            <p>I agree not to send:
+
+                                <ul>
+                                    <li>Controlled substances;</li>
+                                    <li>
+                                Drugs that appear to have been adulterated;
+                                    </li>
+                                    <li>
+                                Drugs subject to REMS if inventory transfer is prohibited; and
+                                    </li>
+                                    <li>
+                                        Drugs requiring temperature control other than "room temperature storage."
+                                    </li>
+                                </ul>
+                                
+                            </p>
+                           </div>
+                       </div>
+
                         <div class="form-group row mb-0">
                             <div class="col-md-6 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
+                                <button type="submit" class="btn btn-primary btn-block">
                                     {{ __('Register') }}
                                 </button>
                             </div>
                         </div>
+
+                        <div class="form-group row mb-0">
+                            <div class="col-md-6 offset-md-4 mt-4">
+                                Already have an Account? <a href="{{ route('login') }}">Sign In Now!</a>
+                            </div>
+                        </div>
+
+                        
                     </form>
                 </div>
             </div>
