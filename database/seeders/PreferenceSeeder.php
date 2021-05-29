@@ -17,8 +17,6 @@ class PreferenceSeeder extends Seeder
         $preferences = [
             [ 'name' => 'email_verification', 'value' => '0'],
             [ 'name' => 'sms_verification', 'value' => '1'],
-            [ 'name' => 'ref_coins', 'value' => '10'],
-            [ 'name' => 'deafult_student_coins', 'value' => '0'],
         ];
 
         foreach($preferences as $preference)
