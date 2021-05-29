@@ -18,7 +18,7 @@ class CreateBadgesTable extends Migration
             $table->string('name');
             $table->string('icon')->nullable();
             $table->integer('status')->default(0);
-            $table->integer('required_test')->default(0);
+            $table->integer('required_donations')->default(0);
             $table->string('description')->nullable();
             $table->timestamps();
         });

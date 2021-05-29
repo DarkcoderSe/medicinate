@@ -19,7 +19,6 @@ class CreateCategoriesTable extends Migration
             $table->string('name');
             $table->string('slug')->nullable();
             $table->string('image')->nullable();
-            $table->bigInteger('required_coins')->default(0);
             $table->integer('status')->default(0);
             $table->string('description')->nullable();
             $table->timestamps();

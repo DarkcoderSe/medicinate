@@ -14,8 +14,8 @@ class AddFieldsInBadgesTable extends Migration
     public function up()
     {
         Schema::table('badges', function (Blueprint $table) {
-            $table->bigInteger('max_score')->default(0);
-            $table->bigInteger('min_score')->default(0);
+            $table->bigInteger('max_donation')->default(0);
+            $table->bigInteger('min_donation')->default(0);
         });
     }
 
