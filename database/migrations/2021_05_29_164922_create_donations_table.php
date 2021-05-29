@@ -33,6 +33,9 @@ class CreateDonationsTable extends Migration
 
             $table->string('expected_cost')->nullable();
 
+            // field for admin 
+            $table->integer('status')->default(0)->comment('0=pending; 1=recieved; 2=rejected;');
+            $table->text('admin_notes')->nullable();
             $table->timestamps();
         });
     }

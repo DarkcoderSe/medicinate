@@ -19,5 +19,8 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-Route::get('/temp', [App\Http\Controllers\HomeController::class, 'temp']);
+Route::prefix('donation')->name('donation')->middleware('auth')->group(function() {
+    Route::get('/', 'DonationController@index')->name('index');
+    Route::post('submit', 'DonationController@submit')->name('submit');
+    Route::get('history', 'DonationController@history')->name('history');
+});
