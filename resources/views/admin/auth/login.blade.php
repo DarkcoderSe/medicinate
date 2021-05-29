@@ -12,7 +12,7 @@
                         <div class="col-7">
                             <div class="text-primary p-4">
                                 <h5 class="text-primary">Welcome Back !</h5>
-                                <p>Sign in to continue to PrepareHOW Control Panel</p>
+                                <p>Sign in to continue to Admin Panel</p>
                             </div>
                         </div>
                         <div class="col-5 align-self-end">
@@ -65,7 +65,7 @@
             <div class="mt-5 text-center">
                 
                 <div>
-                    <p>© 2020 PrepareHOW? Crafted with <i class="mdi mdi-heart text-danger"></i> by Me </p>
+                    <p>© 2020 Online Unused Medicines for NGOs</p>
                 </div>
             </div>
 

@@ -140,20 +140,6 @@
                             </li>
 
                             <li>
-                                <a href="{{ URL::to('admin/user') }}" class="waves-effect">
-                                    <i class="bx bxs-user-detail"></i>
-                                    <span>Students</span>
-                                </a>
-                            </li>
-
-                            <li>
-                                <a href="{{ URL::to('admin/subject') }}" class="waves-effect">
-                                    <i class="bx bxs-book"></i>
-                                    <span>Subjects</span>
-                                </a>
-                            </li>
-
-                            <li>
                                 <a href="{{ URL::to('admin/category') }}" class="waves-effect">
                                     <i class="bx bx-layer"></i>
                                     <span>Categories</span>
@@ -161,86 +147,9 @@
                             </li>
 
                             <li>
-                                <a href="{{ URL::to('admin/test') }}" class="waves-effect">
-                                    <i class="bx bx-file"></i>
-                                    <span>Tests</span>
-                                </a>
-                            </li>
-
-
-                            <li>
-                                <a href="{{ URL::to('admin/question') }}" class="waves-effect">
-                                    <i class="bx bx-question-mark"></i>
-                                    <span>Questions</span>
-                                </a>
-                            </li>
-
-                            <li>
-                                <a href="{{ URL::to('admin/result') }}" class="waves-effect">
-                                    <i class="bx bx-clipboard"></i>
-                                    <span>Results</span>
-                                </a>
-                            </li>
-
-                            <li>
                                 <a href="{{ URL::to('admin/badge') }}" class="waves-effect">
                                     <i class="bx bx-badge"></i>
                                     <span>Badges</span>
-                                </a>
-                            </li>
-
-                            <li>
-                                <a href="{{ URL::to('admin/coupon') }}" class="waves-effect">
-                                    <i class="bx bxs-discount"></i>
-                                    <span>Coupons</span>
-                                </a>
-                            </li>
-
-                            <li>
-                                <a href="{{ URL::to('admin/coin') }}" class="waves-effect">
-                                    <i class="bx bx-wallet-alt"></i>
-                                    <span>Coins History</span>
-                                </a>
-                            </li>
-
-                            <li>
-                                <a href="{{ URL::to('admin/get-equation') }}" class="waves-effect">
-                                    <i class="bx bx-wallet-alt"></i>
-                                    <span>Get Equations</span>
-                                </a>
-                            </li>
-
-                            <li>
-                                <a href="javascript: void(0);" class="has-arrow waves-effect">
-                                    <i class="bx bx-trophy"></i>
-                                    <span>Rewards & Redeems</span>
-                                </a>
-                                <ul class="sub-menu" aria-expanded="false">
-                                    <li>
-                                        <a href="{{ URL::to('admin/reward') }}">
-                                            <span>Rewards</span>
-                                        </a>
-                                    </li>
-
-                                    <li>
-                                        <a href="{{ URL::to('admin/redeem') }}">
-                                            <span>Redeems</span>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </li>
-
-                            <li>
-                                <a href="{{ URL::to('admin/referral') }}" class="waves-effect">
-                                    <i class="bx bx-user-plus"></i>
-                                    <span>Referrals</span>
-                                </a>
-                            </li>
-
-                            <li>
-                                <a href="{{ URL::to('admin/payment-method') }}" class="waves-effect">
-                                    <i class="bx bx-money"></i>
-                                    <span>Payment Methods</span>
                                 </a>
                             </li>
 
