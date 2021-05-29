@@ -54,40 +54,33 @@
                         <thead class="thead-light">
                             <tr>
                                 <th scope="col">Name</th>
+                                <th scope="col">Role</th>
                                 <th scope="col">Email</th>
                                 <th scope="col">Phone</th>
-                                <th scope="col">Referrals</th>
-                                <th scope="col">Results</th>
                                 <th scope="col">Action</th>
                             </tr>
                         </thead>
-                        
+                        <tbody>
+                            @foreach($users as $user)
+                            <tr>
+                                <td>
+                                    <a href="{{ URL::to('admin/user/edit', $user->id) }}">
+                                        {{ $user->name }}
+                                    </a> 
+                                </td>
+                                <td>{{ $user->roles->first()->name ?? '' }} </td>
+                                <td>{{ $user->email }} </td>
+                                <td>{{ $user->contact_no ?? '' }} </td>
+                                <td>
+                                    <a class='text-danger' href='{{ URL::to('admin/user/delete', $user->id) }}' data-toggle='tooltip' data-placement='top' title='' data-original-title='Delete'><i class='bx bx-trash'></i></a>
+                                </td>
+                            </tr>
+                            @endforeach
+                        </tbody>
                     </table>
                 </div>
             </div>
         </div>
     </div>
 </div>
-
-@push('script')
-<script>
-    $(document).ready(function(){
-        $('#dt-table').DataTable({
-            processing: true,
-            serverSide: true,
-            ajax: "{{ URL::to('admin/user/ajax') }}",
-            columns: [
-                {data: 'name', name: 'name'},
-                {data: 'email', name: 'email'},
-                {data: 'contact_no', name: 'contact_no'},
-                {data: 'referrals', name: 'referrals'},
-                {data: 'results', name: 'results'},
-                {data: 'action', name: 'action', orderable: false, searchable: false}
-            ]
-        });
-
-    });
-</script>
-@endpush
-
 @endsection

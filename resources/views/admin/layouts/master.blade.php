@@ -175,6 +175,13 @@
                             </li>
 
                             <li>
+                                <a href="{{ URL::to('admin/user') }}" class="waves-effect">
+                                    <i class="bx bx-user"></i>
+                                    <span>Users</span>
+                                </a>
+                            </li>
+
+                            <li>
                                 <a href="javascript: void(0);" class="has-arrow waves-effect">
                                     <i class="bx bx-key"></i>
                                     <span>Access Control</span>
@@ -220,11 +227,11 @@
                     <div class="container-fluid">
                         <div class="row">
                             <div class="col-sm-6">
-                                <script>document.write(new Date().getFullYear())</script> © PrepareHow.
+                                <script>document.write(new Date().getFullYear())</script> © Online Unused Medicines for NGOs.
                             </div>
                             <div class="col-sm-6">
                                 <div class="text-sm-right d-none d-sm-block">
-                                    Developed by PWH-DCSE
+                                    {{-- developed by nae  --}}
                                 </div>
                             </div>
                         </div>

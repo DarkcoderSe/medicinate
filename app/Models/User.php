@@ -58,27 +58,10 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-    public function results(){
-        return $this->hasMany(Result::class);
-    }
-
-    public function redeems(){
-        return $this->hasMany(Redeem::class);
-    }
-
     public function badges(){
         return $this->belongsToMany(Badge::class, 'student_badges', 'user_id', 'badge_id');
     }
 
-    public function walletCoins(){
-        return $this->hasMany(Wallet::class);
-    }
+    
 
-    public function consumedCoins(){
-        return $this->hasMany(ConsumeCredit::class);
-    }
-
-    public function referredUsers(){
-        return $this->hasMany(User::class, 'ref_by');
-    }
 }

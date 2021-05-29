@@ -20,7 +20,10 @@ class UserController extends Controller
 {
     // shows the list of all users.
     public function index(){
-		return view('admin.user.index');
+		$users = User::all();
+		return view('admin.user.index')->with([
+			'users' => $users
+		]);
 	}
 	
 	public function ajaxIndex(){
