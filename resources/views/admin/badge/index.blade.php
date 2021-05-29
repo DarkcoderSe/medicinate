@@ -80,17 +80,12 @@
                                 </td>
                                 <td>
                                     @if($badge->required_test != 0)
-                                    <b>Required Test : </b> {{ $badge->required_test }} <br>
+                                    <b>Required Donations : </b> {{ $badge->required_test }} <br>
                                     @endif 
-                                    @if($badge->max_score != 0)
-                                    <b>Max Score : </b> {{ $badge->max_score }} <br>
-                                    @endif 
-                                    @if($badge->min_score != 0)
-                                    <b>Min Score : </b> {{ $badge->min_score }}
-                                    @endif
+                                   
                                 </td>
                                 <td>
-                                    {{ $badge->students->count() ?? 0 }} Students
+                                    {{ $badge->students->count() ?? 0 }} Users
                                 </td>
                                 <td>
                                     <ul class="list-inline font-size-20 contact-links mb-0">

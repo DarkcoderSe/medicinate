@@ -18,7 +18,7 @@ class CreateFaqsTable extends Migration
             $table->string('question');
             $table->text('answer')->nullable();
             $table->string('category')->nullable();
-            $table->foreignId('added_by')->constrained('users');
+            $table->unsignedBigInteger('added_by')->nullable();
             $table->bigInteger('clicks')->default(0);
             $table->timestamps();
         });

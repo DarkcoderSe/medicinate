@@ -22,12 +22,9 @@ class Category
         else 
             $category = Cat::find($id);
 
-        if (!is_null($request->parentId))
-            $category->parent_id = $request->parentId;
-
+        $category->parent_id = $request->parentId ?? null;
         $category->name = $request->name;
         $category->slug = $request->slug;
-        $category->required_coins = $request->requiredCoins;
         $category->status = $request->status == 'on' ? 1 : 0;
         $category->description = $request->description;
 

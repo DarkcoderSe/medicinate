@@ -24,11 +24,9 @@ class Badge
 
         $badge->name = $request->name;
         $badge->status = $request->status == 'on' ? 1 : 0;
-        $badge->required_test = $request->requiredTest;
+        $badge->required_donations = $request->requiredTest ?? '';
         $badge->description = $request->description;
 
-        $badge->max_score = $request->maxScore;
-        $badge->min_score = $request->minScore;
 
         if ($request->hasFile('icon')) {
 

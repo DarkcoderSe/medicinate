@@ -1,6 +1,6 @@
 @extends('admin.layouts.master')
 
-@section('title', 'Dashboard - PrepareHOW')
+@section('title', 'Dashboard - Online Unused Medicine for NGO')
 
 @section('content')
 <div class="row">

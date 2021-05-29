@@ -56,8 +56,6 @@ class BadgeController extends Controller
         
         $req->validate([
             'name' => 'required|string',
-            'maxScore' => 'nullable|nullable',
-            'minScore' => 'nullable|nullable',
             'requiredTest' => 'numeric|nullable',
             'description' => 'nullable|string',
             'icon' => 'nullable|mimes:png,jpg,jpeg'
@@ -69,7 +67,7 @@ class BadgeController extends Controller
             return is_null($req->redirect_to) ? redirect()->back() : redirect($req->redirect_to);
 
         } catch (\Throwable $th) {
-            // dd($th);
+            dd($th);
             Toastr::error('Server side error', 'Failure!');
             return redirect()->back()->withInput();
         }
@@ -79,8 +77,6 @@ class BadgeController extends Controller
         
         $req->validate([
             'name' => 'required|string',
-            'maxScore' => 'nullable|nullable',
-            'minScore' => 'nullable|nullable',
             'requiredTest' => 'numeric|nullable',
             'description' => 'nullable|string',
             'icon' => 'nullable|mimes:png,jpg,jpeg',

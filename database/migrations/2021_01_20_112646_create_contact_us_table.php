@@ -15,7 +15,7 @@ class CreateContactUsTable extends Migration
     {
         Schema::create('contact_us', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('user_id')->constrained('users')->nullable();
+            $table->unsignedBigInteger('user_id')->nullable();
             $table->string('name');
             $table->string('email')->nullable();
             $table->string('contact_no')->nullable();

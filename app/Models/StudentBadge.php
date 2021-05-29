@@ -11,6 +11,8 @@ class StudentBadge extends Model
 {
     use HasFactory;
 
+    protected $table = 'user_badges';
+
     protected function serializeDate(DateTimeInterface $date)
     {
         return $date->format('Y-m-d H:i:s');

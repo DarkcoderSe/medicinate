@@ -93,16 +93,6 @@
                     </div>
 
                     <div class="form-row">
-                        <div class="form-group col-md-6">
-                            <label>Required Coins</label>
-                            <input type="text" class="form-control" name="requiredCoins">
-
-                            @if($errors->has('requiredCoins'))
-                            <span class="text-danger small">
-                                {{ $errors->first('requiredCoins') }}
-                            </span>
-                            @endif
-                        </div>
 
                         <div class="form-group col-md-6">
                             <label>Parent Category</label>

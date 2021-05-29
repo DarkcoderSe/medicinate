@@ -78,7 +78,7 @@
                         </div>
 
                         <div class="form-group col-md-4">
-                            <label>Required Test</label>
+                            <label>Required Donations</label>
                             <input type="number" name="requiredTest" class="form-control" min="0" required>
 
                             @if($errors->any())
@@ -93,29 +93,6 @@
                         <div class="form-group col-md-12">
                             <label>Description</label>
                             <textarea name="description" cols="30" rows="5" class="form-control"></textarea>
-                        </div>
-                    </div>
-
-                    <div class="form-row">
-                        <div class="form-group col-md-6">
-                            <label>Min Score</label>
-                            <input type="number" min="0"  name="minScore" class="form-control">
-
-                            @if($errors->has('minScore'))
-                            <span class="text-danger small">
-                                {{ $errors->first('minScore') }}
-                            </span>
-                            @endif 
-                        </div>
-                        <div class="form-group col-md-6">
-                            <label>Max Score</label>
-                            <input type="number" min="0" name="maxScore" class="form-control">
-
-                            @if($errors->has('maxScore'))
-                            <span class="text-danger small">
-                                {{ $errors->first('maxScore') }}
-                            </span>
-                            @endif 
                         </div>
                     </div>
 

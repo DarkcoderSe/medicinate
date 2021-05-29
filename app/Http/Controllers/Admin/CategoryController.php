@@ -65,7 +65,6 @@ class CategoryController extends Controller
             'parentId' => 'nullable|string',
             'name' => 'required|string',
             'slug' => 'required|string',
-            'requiredCoins' => 'numeric|required',
             'description' => 'nullable|string',
             'image' => 'nullable|mimes:png,jpg,jpeg'
         ]);
@@ -76,7 +75,7 @@ class CategoryController extends Controller
             return is_null($req->redirect_to) ? redirect()->back() : redirect($req->redirect_to);
 
         } catch (\Throwable $th) {
-            // dd($th);
+            dd($th);
             Toastr::error('Server side error', 'Failure!');
             return redirect()->back()->withInput();
         }
