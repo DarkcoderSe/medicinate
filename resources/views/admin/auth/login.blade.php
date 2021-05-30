@@ -25,7 +25,7 @@
                         <a href="index.html">
                             <div class="avatar-md profile-user-wid mb-4">
                                 <span class="avatar-title rounded-circle bg-light">
-                                    <img src="{{URL::to('admin/assets/logo.jpg')}}" alt="" class="rounded-circle" height="34">
+                                    <img src="{{URL::to('admin/assets/logo.png')}}" alt="" class="rounded-circle" height="65">
                                 </span>
                             </div>
                         </a>

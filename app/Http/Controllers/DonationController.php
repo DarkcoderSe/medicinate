@@ -30,6 +30,14 @@ class DonationController extends Controller
         ]);
     }
 
+    public function ngo()
+    {
+        $ngos = Ngo::all();
+        return view('ngo')->with([
+            'ngos' => $ngos
+        ]);
+    }
+
     public function submit(Request $request)
     {
         $request->validate([

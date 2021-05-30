@@ -22,6 +22,8 @@ Auth::routes();
 Route::namespace('App\\Http\\Controllers')
     ->group(function() {
 
+    Route::get('ngo', 'DonationController@ngo');
+
     Route::prefix('donation')
             ->name('donation.')
             ->middleware('auth')

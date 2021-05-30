@@ -156,8 +156,7 @@
                                 </td>
                                 <td>
                                     @if($donation->status == 0)
-                                    <a href="{{ URL::to('admin/donation/status/1', $donation->id) }} " class="btn btn-success btn-sm">Approve</a>
-                 
+                                    <a href="{{ URL::to('admin/donation/status/1', $donation->id) }} " class="btn btn-success btn-sm">Accept</a>                 
                                     <a href="{{ URL::to('admin/donation/status/2', $donation->id) }} " class="btn btn-danger btn-sm">Reject</a>
                                     @endif
                                 </td>

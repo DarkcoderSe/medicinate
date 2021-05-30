@@ -33,9 +33,8 @@
         <nav class="navbar navbar-expand-lg navigation fixed-top sticky">
             <div class="container">
                 <a class="navbar-logo" href="{{ URL::to('/') }}">
-                    <h3 class="text-white">
-                        Project Name
-                    </h3>
+                    <img src="{{URL::to('admin/assets/logo.png')}}" alt="" height="65" class="logo logo-dark">
+                    <img src="{{URL::to('admin/assets/logo.png')}}" alt="" height="65" class="logo logo-light">
                 </a>
 
                 <button type="button" class="btn btn-sm px-3 font-size-16 d-lg-none header-item waves-effect waves-light" data-toggle="collapse" data-target="#topnav-menu-content">
@@ -56,6 +55,9 @@
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="{{ URL::to('feedback') }}">Feedback</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ URL::to('ngo') }}">NGOs</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="{{ URL::to('/#faqs') }}">FAQs</a>
