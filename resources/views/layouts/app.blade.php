@@ -23,6 +23,9 @@
         <!-- App Css-->
         <link href="{{asset('admin/assets/css/app.min.css')}}" id="app-style" rel="stylesheet" type="text/css" />
 
+        <link rel="stylesheet" href="//cdn.bootcss.com/toastr.js/latest/css/toastr.min.css">
+
+        @stack('style')
     </head>
 
     <body data-spy="scroll" data-target="#topnav-menu" data-offset="60">
@@ -46,10 +49,10 @@
                         </li>
                     
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ URL::to('donate') }}">Donate Medicines</a>
+                            <a class="nav-link" href="{{ URL::to('donation') }}">Donate Medicines</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ URL::to('donate/history') }}">My Donations</a>
+                            <a class="nav-link" href="{{ URL::to('donation/history') }}">My Donations</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="{{ URL::to('report-issue') }}">Report Issue</a>
@@ -73,6 +76,13 @@
                     @else 
                     <div class="ml-lg-2">
                         <a href="javascript:void(0);" class="btn btn-link text-light w-xs">{{ auth()->user()->name ?? '' }}</a>
+                    </div>
+                    <div class="ml-lg-2">
+                        <a href="javascript:void(0);" class="btn btn-danger text-light w-xs" onclick='document.getElementById("logout-form").submit();'>Logout</a>
+                        <form id='logout-form' action="{{route('logout')}}" method='POST'>
+                            @csrf
+                        </form>
+                    
                     </div>
                     @endguest
                 </div>
@@ -118,6 +128,13 @@
         <script src="{{URL::to('admin/assets/js/pages/ico-landing.init.js')}}"></script>
 
         <script src="{{URL::to('admin/assets/js/app.js')}}"></script>
+
+        <script src="//cdn.bootcss.com/toastr.js/latest/js/toastr.min.js"></script>
+
+        @stack('script')
+        {!! Toastr::message() !!}
+
+
 
     </body>
 </html>

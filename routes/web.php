@@ -19,7 +19,11 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::prefix('donation')->name('donation')->middleware('auth')->group(function() {
+Route::prefix('donation')
+        ->name('donation.')
+        ->middleware('auth')
+        ->namespace('App\\Http\\Controllers')
+        ->group(function() {
     Route::get('/', 'DonationController@index')->name('index');
     Route::post('submit', 'DonationController@submit')->name('submit');
     Route::get('history', 'DonationController@history')->name('history');
