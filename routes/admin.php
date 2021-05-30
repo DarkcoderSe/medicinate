@@ -85,129 +85,11 @@ Route::middleware('role:administrator|manager')->group(function(){
 
     });
 
-    /**
-     * Reported Issue CRUD
-     */
-    Route::prefix('reported-issue')->name('reported-issue.')->group(function(){
-        
-        Route::get('/', 'ReportedIssueController@index')->name('index');
-        Route::get('ajax', 'ReportedIssueController@ajaxIndex')->name('ajax');
-        Route::get('create', 'ReportedIssueController@create')->name('create');
-        Route::get('edit/{id}', 'ReportedIssueController@edit')->name('edit');
-        Route::get('delete/{id}', 'ReportedIssueController@delete')->name('delete');
-
-        Route::post('submit', 'ReportedIssueController@submit')->name('submit');
-        Route::post('update', 'ReportedIssueController@update')->name('update');
-
-    });
-
-    /**
-     * Payment Method CRUD
-     */
-    Route::prefix('payment-method')->name('payment-method.')->group(function(){
-        
-        Route::get('/', 'PaymentMethodController@index')->name('index');
-        Route::get('ajax', 'PaymentMethodController@ajaxIndex')->name('ajax');
-        Route::get('create', 'PaymentMethodController@create')->name('create');
-        Route::get('edit/{id}', 'PaymentMethodController@edit')->name('edit');
-        Route::get('delete/{id}', 'PaymentMethodController@delete')->name('delete');
-
-        Route::post('submit', 'PaymentMethodController@submit')->name('submit');
-        Route::post('update', 'PaymentMethodController@update')->name('update');
-
-        Route::prefix('detail')->name('detail.')->group(function(){
-            Route::post('submit', 'PaymentMethodController@detailSubmit')->name('submit');
-            Route::get('delete/{id}', 'PaymentMethodController@detailDelete')->name('delete');
-
-        });
-    });
-
-    /**
-     * Category CRUD
-     */
-    Route::prefix('category')->name('category.')->group(function(){
-        
-        Route::get('/', 'CategoryController@index')->name('index');
-        Route::get('create/{id?}', 'CategoryController@create')->name('create');
-        Route::get('edit/{id}', 'CategoryController@edit')->name('edit');
-        Route::get('delete/{id}', 'CategoryController@delete')->name('delete');
-
-        Route::post('submit', 'CategoryController@submit')->name('submit');
-        Route::post('update', 'CategoryController@update')->name('update');
-
-    });
-
-    /**
-     * Test CRUD
-     */
-    Route::prefix('test')->name('test.')->group(function(){
-        
-        Route::get('/', 'TestController@index')->name('index');
-        Route::get('create/{id?}', 'TestController@create')->name('create');
-        Route::get('edit/{id}', 'TestController@edit')->name('edit');
-        Route::get('delete/{id}', 'TestController@delete')->name('delete');
-
-        Route::post('submit', 'TestController@submit')->name('submit');
-        Route::post('update', 'TestController@update')->name('update');
-
-        Route::prefix('question')->name('question.')->group(function() {
-            Route::get('view/{testId}', 'TestController@getQuestions');
-            Route::post('submit', 'TestController@questionSubmit')->name('submit');
-            Route::get('delete/{id}', 'TestController@deleteTestSubjectRule')->name('delete');
-        });
-
-    });
+   
 
 
-    /**
-     * Subject CRUD
-     */
-    Route::prefix('subject')->name('subject.')->group(function(){
-        
-        Route::get('/', 'SubjectController@index')->name('index');
-        Route::get('ajax', 'SubjectController@ajaxIndex')->name('ajax');
-        Route::get('create', 'SubjectController@create')->name('create');
-        Route::get('edit/{id}', 'SubjectController@edit')->name('edit');
-        Route::get('delete/{id}', 'SubjectController@delete')->name('delete');
 
-        Route::post('submit', 'SubjectController@submit')->name('submit');
-        Route::post('update', 'SubjectController@update')->name('update');
 
-    });
-
-    Route::prefix('chapter')->name('chapter.')->group(function(){
-        
-        Route::get('edit/{id}', 'ChapterController@edit')->name('edit');
-        Route::get('delete/{id}', 'ChapterController@delete')->name('delete');
-
-        Route::post('submit', 'ChapterController@submit')->name('submit');
-        Route::post('update', 'ChapterController@update')->name('update');
- 
-    });
-
-    Route::prefix('question')->name('question.')->group(function(){
-        
-        Route::get('/', 'QuestionController@index')->name('index');
-        Route::get('ajax', 'QuestionController@ajaxIndex')->name('ajax');
-        Route::get('create', 'QuestionController@create')->name('create');
-        Route::get('edit/{id}', 'QuestionController@edit')->name('edit');
-        Route::get('delete/{id}', 'QuestionController@delete')->name('delete');
-
-        Route::post('submit', 'QuestionController@submit')->name('submit');
-        Route::post('update', 'QuestionController@update')->name('update');
-
-        Route::prefix('option')->name('option.')->group(function(){
-        
-            Route::get('edit/{id}', 'QuestionController@optionEdit')->name('edit');
-            Route::get('delete/{id}', 'QuestionController@optionDelete')->name('delete');
-    
-            Route::post('submit', 'QuestionController@optionSubmit')->name('submit');
-            Route::post('update', 'QuestionController@optionUpdate')->name('update');
-            Route::post('correct', 'QuestionController@updateCorrectOption')->name('correct');
-    
-        });
-
-    });
 
     /**
      * Badges CRUD
@@ -225,71 +107,38 @@ Route::middleware('role:administrator|manager')->group(function(){
     });
 
     /**
-     * Coupon CRUD
+     * Manufacturer CRUD
      */
-    Route::prefix('coupon')->name('coupon.')->group(function(){
+    Route::prefix('manufacturer')->name('manufacturer.')->group(function(){
         
-        Route::get('/', 'CouponController@index')->name('index');
-        Route::get('create', 'CouponController@create')->name('create');
-        Route::get('edit/{id}', 'CouponController@edit')->name('edit');
-        Route::get('delete/{id}', 'CouponController@delete')->name('delete');
+        Route::get('/', 'ManufacturerController@index')->name('index');
+        Route::get('create', 'ManufacturerController@create')->name('create');
+        Route::get('edit/{id}', 'ManufacturerController@edit')->name('edit');
+        Route::get('delete/{id}', 'ManufacturerController@delete')->name('delete');
 
-        Route::post('submit', 'CouponController@submit')->name('submit');
-        Route::post('update', 'CouponController@update')->name('update');
+        Route::post('submit', 'ManufacturerController@submit')->name('submit');
+        Route::post('update', 'ManufacturerController@update')->name('update');
 
     });
 
-
     /**
-     * Reward CRUD
+     * Badges CRUD
      */
-    Route::prefix('reward')->name('reward.')->group(function(){
+    Route::prefix('ngo')->name('ngo.')->group(function(){
         
-        Route::get('/', 'RewardController@index')->name('index');
-        Route::get('create', 'RewardController@create')->name('create');
-        Route::get('edit/{id}', 'RewardController@edit')->name('edit');
-        Route::get('delete/{id}', 'RewardController@delete')->name('delete');
+        Route::get('/', 'NgoController@index')->name('index');
+        Route::get('create', 'NgoController@create')->name('create');
+        Route::get('edit/{id}', 'NgoController@edit')->name('edit');
+        Route::get('delete/{id}', 'NgoController@delete')->name('delete');
 
-        Route::post('submit', 'RewardController@submit')->name('submit');
-        Route::post('update', 'RewardController@update')->name('update');
+        Route::post('submit', 'NgoController@submit')->name('submit');
+        Route::post('update', 'NgoController@update')->name('update');
 
     });
+
 
     /**
-     * Redeem CRUD
-     */
-    Route::prefix('redeem')->name('redeem.')->group(function(){
-        Route::get('/{id?}', 'RedeemController@index')->name('index');
-    });
-
-    /**
-     * Referral CRUD
-     */
-    Route::prefix('referral')->name('referral.')->group(function(){
-        Route::get('/{id?}', 'ReferralRegistrationController@index')->name('index');
-    });
-
-    /**
-     * Result CRUD
-     */
-    Route::prefix('result')->name('result.')->group(function(){
-        Route::get('/{id?}', 'ResultController@index')->name('index');
-    });
-
-
-    Route::get('get-equation', 'HomeController@getEquation');
-
-    /**
-     * Coin CRUD
-     */
-    Route::prefix('coin')->name('coin.')->group(function(){
-        
-        // should last route of prefix
-        Route::get('/{id?}', 'CoinController@index')->name('index');
-    });
-
-        /**
-     * Result CRUD
+     * fedeback CRUD
      */
     Route::prefix('contact')->name('contact.')->group(function(){
         Route::get('ajax/{id?}/{userId?}', 'ContactController@ajaxIndex')->name('ajax');
@@ -299,6 +148,15 @@ Route::middleware('role:administrator|manager')->group(function(){
 
         Route::get('/{id?}/{userId?}', 'ContactController@index')->name('index');
 
+    });
+
+    /**
+     * donations CRUD
+     */
+    Route::prefix('donation')->name('donation.')->group(function(){
+
+        Route::get('/', 'DonationController@index')->name('index');
+        Route::get('status/{s}/{d}', 'DonationController@changeStatus');
     });
 
 

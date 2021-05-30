@@ -139,12 +139,28 @@
                               
                             </li>
 
+                          
                             <li>
-                                <a href="{{ URL::to('admin/category') }}" class="waves-effect">
-                                    <i class="bx bx-layer"></i>
-                                    <span>Categories</span>
+                                <a href="{{ URL::to('admin/donation') }}" class="waves-effect">
+                                    <i class="bx bx-plus-medical"></i>
+                                    <span>Donations</span>
                                 </a>
                             </li>
+
+                            <li>
+                                <a href="{{ URL::to('admin/manufacturer') }}" class="waves-effect">
+                                    <i class=" bx bx-buildings "></i>
+                                    <span>Manufacturers</span>
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="{{ URL::to('admin/ngo') }}" class="waves-effect">
+                                    <i class=" bx bx-bar-chart-alt-2 "></i>
+                                    <span>NGOs</span>
+                                </a>
+                            </li>
+
 
                             <li>
                                 <a href="{{ URL::to('admin/badge') }}" class="waves-effect">
@@ -153,17 +169,11 @@
                                 </a>
                             </li>
 
-                            <li>
-                                <a href="{{ URL::to('admin/reported-issue') }}" class="waves-effect">
-                                    <i class="bx bx-bug-alt"></i>
-                                    <span>Reported Issue</span>
-                                </a>
-                            </li>
-
+                          
                             <li>
                                 <a href="{{ URL::to('admin/contact') }}" class="waves-effect">
                                     <i class="bx bx-envelope"></i>
-                                    <span>Contact Us </span>
+                                    <span>Feedback</span>
                                 </a>
                             </li>
 
