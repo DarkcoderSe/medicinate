@@ -55,6 +55,7 @@
                                 </th>
                                 <th>Weight / Cost</th>
                                 <th>Medicines List</th>
+                                <th>Donate to</th>
                                 <th>Status</th>
                                 <th>Action</th>
                             </tr>
@@ -126,6 +127,17 @@
                                             </div>
                                         </div>
                                     </div>
+                                </td>
+                                <td>
+                                    <ul>
+                                    @if(!is_null($donation->ngos))
+                                        @foreach($donation->ngos as $ngo)
+                                        <li>{{ $ngo->name ?? '' }} </li>
+                                        @endforeach
+                                    @else 
+                                        <li>Any NGO</li>
+                                    @endif
+                                    </ul>
                                 </td>
                                 <td>
                                     @if ($donation->status == 0)

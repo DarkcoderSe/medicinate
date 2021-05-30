@@ -162,12 +162,12 @@
                             </li>
 
 
-                            <li>
+                            {{-- <li>
                                 <a href="{{ URL::to('admin/badge') }}" class="waves-effect">
                                     <i class="bx bx-badge"></i>
                                     <span>Badges</span>
                                 </a>
-                            </li>
+                            </li> --}}
 
                           
                             <li>
@@ -177,6 +177,7 @@
                                 </a>
                             </li>
 
+                            @if(auth()->user()->hasRole('administrator'))
                             <li>
                                 <a href="{{ URL::to('admin/preference') }}" class="waves-effect">
                                     <i class="bx bx-wrench"></i>
@@ -210,6 +211,7 @@
                                     </li>
                                 </ul>
                             </li>
+                            @endif
                             
                         </ul>
                     </div>

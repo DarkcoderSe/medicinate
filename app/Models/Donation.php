@@ -13,4 +13,9 @@ class Donation extends Model
     {
         return $this->hasMany(DonationMedicine::class);
     }
+
+    public function ngos()
+    {
+        return $this->belongsToMany(Ngo::class, 'donation_to_ngos', 'donation_id', 'ngo_id');
+    }
 }

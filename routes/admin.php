@@ -10,9 +10,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('login', 'LoginController@show')->name('login');
 Route::post('login', 'LoginController@submit')->name('login.submit');
 
-Route::middleware('role:administrator|manager')->group(function(){
-
-    Route::get('home', 'HomeController@index')->name('home');
+Route::middleware('role:administrator')->group(function() {
 
     /**
      * Student CRUD
@@ -85,11 +83,12 @@ Route::middleware('role:administrator|manager')->group(function(){
 
     });
 
-   
 
+});
 
+Route::middleware('role:administrator|manager|expert')->group(function(){
 
-
+    Route::get('home', 'HomeController@index')->name('home');
 
     /**
      * Badges CRUD

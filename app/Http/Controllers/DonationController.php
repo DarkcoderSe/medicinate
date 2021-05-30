@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 
 use App\Models\Donation;
 use App\Models\DonationMedicine;
+use App\Models\Ngo;
+use App\Models\DonationToNgo;
 
 use DB;
 use Toastr;
@@ -14,7 +16,10 @@ class DonationController extends Controller
 {
     public function index()
     {
-        return view('donation.index');
+        $ngo = Ngo::all();
+        return view('donation.index')->with([
+            'ngos' => $ngo
+        ]);
     }
 
     public function history()
@@ -66,6 +71,16 @@ class DonationController extends Controller
                     $donationMedicine->save();
                 }
             }
+
+            if (count($request->ngo) > 0) {
+                for ($i = 0; $i < count($request->ngo); $i++) {
+                    $donationToNgo = new DonationToNgo;
+                    $donationToNgo->ngo_id = $request->ngo[$i];
+                    $donationToNgo->donation_id = $donation->id;
+                    $donationToNgo->save();
+                }
+            }
+
 
             
         } catch (\Throwable $th) {

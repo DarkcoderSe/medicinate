@@ -88,6 +88,27 @@
                             </div>
                         </div>
 
+
+                        <div class="form-row">
+                            <div class="form-group col-md-12">
+                            
+                                <label class="control-label">Select NGOs (Multiple)</label>
+    
+                                <select class="select2 form-control select2-multiple" multiple="multiple" name="ngo[]" data-placeholder="Choose ...">
+                                    <option value="">Any</option>
+                                    @foreach($ngos as $ngo)
+                                    <option value="{{ $ngo->id }}">
+                                        {{ $ngo->name }}
+                                    </option>
+                                    @endforeach
+                                </select>
+
+                                <span class="text-muted small">
+                                    Your donation will goes to selected NGOs only. 
+                                </span>
+                            </div>
+                        </div>
+
                         
 
                         <div class="row mb-4">
