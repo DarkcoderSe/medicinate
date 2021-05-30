@@ -55,9 +55,6 @@
                             <a class="nav-link" href="{{ URL::to('donation/history') }}">My Donations</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ URL::to('report-issue') }}">Report Issue</a>
-                        </li>
-                        <li class="nav-item">
                             <a class="nav-link" href="{{ URL::to('feedback') }}">Feedback</a>
                         </li>
                         <li class="nav-item">

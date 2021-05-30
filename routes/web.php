@@ -19,12 +19,23 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::prefix('donation')
-        ->name('donation.')
-        ->middleware('auth')
-        ->namespace('App\\Http\\Controllers')
+Route::namespace('App\\Http\\Controllers')
+    ->group(function() {
+
+    Route::prefix('donation')
+            ->name('donation.')
+            ->middleware('auth')
+            ->group(function() {
+
+        Route::get('/', 'DonationController@index')->name('index');
+        Route::post('submit', 'DonationController@submit')->name('submit');
+        Route::get('history', 'DonationController@history')->name('history');
+    });
+
+    Route::prefix('feedback')
+        ->name('feedback.')
         ->group(function() {
-    Route::get('/', 'DonationController@index')->name('index');
-    Route::post('submit', 'DonationController@submit')->name('submit');
-    Route::get('history', 'DonationController@history')->name('history');
+        Route::get('/', 'FeedbackController@index')->name('index');
+        Route::post('submit', 'FeedbackController@submit')->name('submit');
+    });
 });
