@@ -31,7 +31,7 @@
                         
                         <!-- Button trigger modal -->
                         <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modelId">
-                            Add New Manufacturer
+                            Add New NGO
                           </button>
                           
                           <!-- Modal -->

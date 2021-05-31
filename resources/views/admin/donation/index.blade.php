@@ -159,6 +159,12 @@
                                     <a href="{{ URL::to('admin/donation/status/1', $donation->id) }} " class="btn btn-success btn-sm">Accept</a>                 
                                     <a href="{{ URL::to('admin/donation/status/2', $donation->id) }} " class="btn btn-danger btn-sm">Reject</a>
                                     @endif
+
+                                    @if($donation->status == 2)
+                                    <a href="{{ URL::to('admin/donation/delete', $donation->id) }}" class="btn btn-danger btn-sm">
+                                        Delete
+                                    </a>
+                                    @endif
                                 </td>
                             </tr>
                             @endforeach

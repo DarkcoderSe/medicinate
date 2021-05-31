@@ -26,6 +26,16 @@
         <link rel="stylesheet" href="//cdn.bootcss.com/toastr.js/latest/css/toastr.min.css">
 
         @stack('style')
+
+        <style>
+            .nav-sticky .os {
+                color: #000 !important;
+            }
+
+            .sticky {
+                color: aliceblue;
+            }
+        </style>
     </head>
 
     <body data-spy="scroll" data-target="#topnav-menu" data-offset="60">
@@ -70,11 +80,12 @@
                         <a href="{{ URL::to('login') }}" class="btn btn-outline-success w-xs">Login</a>
                     </div>
                     <div class="ml-lg-2">
-                        <a href="{{ URL::to('register') }}" class="btn btn-link text-light w-xs">Register</a>
+                        <a href="{{ URL::to('register') }}" class="btn btn-link text-light os w-xs">Register</a>
                     </div>
                     @else 
-                    <div class="ml-lg-2">
-                        <a href="javascript:void(0);" class="btn btn-link text-light w-xs">{{ auth()->user()->name ?? '' }}</a>
+                    <div class="ml-lg-2 mr-2">
+                        <a href="javascript:void(0);" class="text-light os w-xs">{{ auth()->user()->name ?? '' }}</a>
+
                     </div>
                     <div class="ml-lg-2">
                         <a href="javascript:void(0);" class="btn btn-danger text-light w-xs" onclick='document.getElementById("logout-form").submit();'>Logout</a>

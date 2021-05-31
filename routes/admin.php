@@ -156,6 +156,7 @@ Route::middleware('role:administrator|manager|expert')->group(function(){
 
         Route::get('/', 'DonationController@index')->name('index');
         Route::get('status/{s}/{d}', 'DonationController@changeStatus');
+        Route::get('delete/{id}', 'DonationController@delete');
     });
 
 

@@ -29,4 +29,11 @@ class DonationController extends Controller
         Toastr::success('Status has been changed successfully', 'Success');
         return redirect()->back();
     }
+
+    public function delete($id)
+    {
+        Donation::destroy($id);
+        Toastr::success('Donation has been deleted successfully', 'Success');
+        return redirect()->back();
+    }
 }
