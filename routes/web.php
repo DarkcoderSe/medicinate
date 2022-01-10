@@ -41,3 +41,6 @@ Route::namespace('App\\Http\\Controllers')
         Route::post('submit', 'FeedbackController@submit')->name('submit');
     });
 });
+
+Route::post('products/{id}/purchase', 'ProductController@purchase')->name('products.purchase');
+Route::get('show',[\App\Http\Controllers\Product\ProductController::class,'show']);

@@ -9,12 +9,13 @@ use Illuminate\Notifications\Notifiable;
 use Laratrust\Traits\LaratrustUserTrait;
 use Laravel\Passport\HasApiTokens;
 use DateTimeInterface;
+use Laravel\Cashier\Billable;
 
 
 class User extends Authenticatable
 {
     use LaratrustUserTrait;
-    use HasFactory, Notifiable;
+    use HasFactory, Notifiable,Billable;
     use HasApiTokens;
 
     /**
@@ -62,6 +63,6 @@ class User extends Authenticatable
         return $this->belongsToMany(Badge::class, 'student_badges', 'user_id', 'badge_id');
     }
 
-    
+
 
 }
