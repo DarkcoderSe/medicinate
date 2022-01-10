@@ -47,7 +47,7 @@ class ProductController extends Controller
      */
     public function show(Product $product)
     {
-        dd($product);
+//        return $product;
         $intent = auth()->user()->createSetupIntent();
         return view('Product.showProduct',compact('product' ,'intent'));
 

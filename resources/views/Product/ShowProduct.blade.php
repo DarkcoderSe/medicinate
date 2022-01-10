@@ -23,7 +23,7 @@
     }
     </style>
 @endsection
-<form method="POST" action="{{route('products.purchase', $product->id)}}" class="card-form mt-3 mb-3">
+<form method="POST" action="{{URL::to('payment/{$product->id}/purchase' )}}" class="card-form mt-3 mb-3">
     @csrf
     <input type="hidden" name="payment_method" class="payment-method">
     <input class="StripeElement mb-3" name="card_holder_name" placeholder="Card holder name" required>
