@@ -15,7 +15,7 @@ use Laravel\Cashier\Billable;
 class User extends Authenticatable
 {
     use LaratrustUserTrait;
-    use HasFactory, Notifiable,Billable;
+//    use HasFactory, Notifiable,Billables;
     use HasApiTokens;
 
     /**

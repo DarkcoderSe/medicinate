@@ -91,7 +91,6 @@ class ProductController extends Controller
     {
         $user          = $request->user();
         $paymentMethod = $request->input('payment_method');
-
         try {
             $user->createOrGetStripeCustomer();
             $user->updateDefaultPaymentMethod($paymentMethod);

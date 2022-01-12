@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\StripController;
 
 /*
 |--------------------------------------------------------------------------
@@ -42,5 +43,8 @@ Route::namespace('App\\Http\\Controllers')
     });
 });
 
-Route::post('products/{id}/purchase', 'ProductController@purchase')->name('products.purchase');
-Route::get('show',[\App\Http\Controllers\Product\ProductController::class,'show']);
+//Route::post('products/{id}/purchase', 'ProductController@purchase')->name('products.purchase');
+//Route::get('show',[\App\Http\Controllers\Product\ProductController::class,'show']);
+
+Route::get('payments', [StripController\StripController::class ,'purchasForm']);
+Route::post('payments', [StripController\StripController::class,'purchas'])->name('payment.post');
