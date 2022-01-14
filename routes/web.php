@@ -35,18 +35,22 @@ Route::namespace('App\\Http\\Controllers')
         Route::get('history', 'DonationController@history')->name('history');
     });
 
-// Route::prefix('payment')
+// Route::prefix('stripe-payment')
+//         ->name('stripe-payment')
 //         ->middleware('auth')
 //         ->group(function() {
 
     // Route::get('payment', 'PaymentController@cashier');
     // // Route::post('submit', 'PaymentController@cashier');
-   // Route::post('payment/{id}/purchase', 'PaymentController@purchase')->name('products.purchase');
-   // Route::get('show','ProductController@show');
+   Route::post('/show', 'ProductController@purchase')->name('show');
+   Route::get('/show','ProductController@show')->middleware(['auth']);;
 
    
-  Route::get('/stripe-payment', [StripeController::class, 'handleGet']);
- Route::post('/stripe-payment', [StripeController::class, 'handlePost'])->name('stripe.payment');
+  Route::get('/stripe-payment', [StripeController::class, 'handleGet'])->middleware(['auth']);
+  Route::post('/stripe-payment', [StripeController::class, 'handlePost'])->name('stripe.payment');
+
+
+
 
 
 

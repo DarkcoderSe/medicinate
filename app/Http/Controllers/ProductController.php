@@ -7,19 +7,23 @@ use App\Models\Product;
 use App\Models\User;
 use Laravel\Cashier\Billable;
 use Auth;
+use Session;
+
+
 class ProductController extends Controller
 {
-    public function show(Product $product)
+    public function show(Request $request)
     {
      
         $intent = auth()->user()->createSetupIntent();
 
-        return view('show', compact('product', 'intent'));
+        return view('show', compact('intent'));
     }
 
 
-    public function purchase(Request $request, Product $product)
+    public function purchase(Request $request)
     {
+        //  return $request;
         $user          = $request->user();
         $paymentMethod = $request->input('payment_method');
 
@@ -32,24 +36,9 @@ class ProductController extends Controller
         }
 
         return back()->with('message', 'Product purchased successfully!');
+        // Session::flash('success', 'Payment has been successfully processed.');
+
     }
 
-
-    //  public function cashier()
-    // {
-    //     return view('purchase');
-    // }
-
-    // public function pay(Request $request)
-    // {
-    //     $obj = new Product;
-    //     $obj->card_num= $request->card_num;
-    //     $obj->name= $request->name;
-    //     $obj->exp= $request->exp;
-    //     $obj->cvc= $request->cvc;
-    //     $obj->save();
-
-    //     return redirect('/purchase');
-    // }
 
 }

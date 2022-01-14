@@ -1,17 +1,20 @@
+@extends('layouts.app')
+@section('content')
+
 
 
 <!DOCTYPE html>
 <html>
 <head>
 	<title>Payment Method</title>
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" />
+	<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" /> -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <style type="text/css">
+    <!-- <style type="text/css">
         .container {
             margin-top: 40px;
         }
         .panel-heading {
-        display: inline;
+        /* display: inline; */
         font-weight: bold;
         }
         .flex-table {
@@ -25,7 +28,7 @@
             vertical-align: middle;
             width: 55%;
         }
-    </style>
+    </style> -->
 </head>
 <body>
   
@@ -161,3 +164,4 @@ $(function() {
 </script>
 </html>
 
+@endsection
