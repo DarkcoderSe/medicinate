@@ -25,6 +25,10 @@
 
         <link rel="stylesheet" href="//cdn.bootcss.com/toastr.js/latest/css/toastr.min.css">
 
+<<<<<<< HEAD
+=======
+        
+>>>>>>> medbranch
         @stack('style')
 
         <style>
@@ -60,6 +64,18 @@
                         <li class="nav-item">
                             <a class="nav-link" href="{{ URL::to('donation') }}">Donate Medicines</a>
                         </li>
+<<<<<<< HEAD
+=======
+<!-- 
+                        <li class="nav-item">
+                            <a class="nav-link active" href="{{ URL::to('stripe-payment') }}">Donate Amount</a>
+                        </li> -->
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ URL::to('stripe-payment') }}">Donate Amount</a>
+                        </li>
+
+>>>>>>> medbranch
                         <li class="nav-item">
                             <a class="nav-link" href="{{ URL::to('donation/history') }}">My Donations</a>
                         </li>

@@ -3,6 +3,11 @@
 namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
+<<<<<<< HEAD
+=======
+use Illuminate\Support\Facades\Schema;
+use Laravel\Cashier\Cashier;
+>>>>>>> medbranch
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -13,7 +18,11 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register()
     {
+<<<<<<< HEAD
         //
+=======
+        Cashier::ignoreMigrations();
+>>>>>>> medbranch
     }
 
     /**
@@ -23,6 +32,10 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
+<<<<<<< HEAD
         //
+=======
+        Schema::defaultStringLength(191);
+>>>>>>> medbranch
     }
 }
