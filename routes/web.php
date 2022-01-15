@@ -1,10 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-<<<<<<< HEAD
-=======
 use App\Http\Controllers\StripeController;
->>>>>>> medbranch
 
 /*
 |--------------------------------------------------------------------------
@@ -38,8 +35,6 @@ Route::namespace('App\\Http\\Controllers')
         Route::get('history', 'DonationController@history')->name('history');
     });
 
-<<<<<<< HEAD
-=======
 // Route::prefix('stripe-payment')
 //         ->name('stripe-payment')
 //         ->middleware('auth')
@@ -55,14 +50,13 @@ Route::namespace('App\\Http\\Controllers')
   Route::post('/stripe-payment', [StripeController::class, 'handlePost'])->name('stripe.payment');
 
 
-
+    // Route::get('/user-info','StripeController@info');
 
 
 
 
     // });
 
->>>>>>> medbranch
     Route::prefix('feedback')
         ->name('feedback.')
         ->group(function() {

@@ -2,16 +2,19 @@
 @section('content')
 
 
+	<!-- <title>Payment Method</title> -->
+    <!-- <link rel="stylesheet" href="css/show_page2.css"> -->
 
-<!DOCTYPE html>
-<html>
-<head>
-	<title>Payment Method</title>
-	<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" /> -->
+   @push('style')
+   <!-- Bootstrap Css -->
+   <!-- <link href="{{asset('admin/assets/css/custom_bootstrap_panel.css')}}" id="bootstrap-style" rel="stylesheet" type="text/css" /> -->
+        
+        
+   <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" /> -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <!-- <style type="text/css">
+    <style type="text/css">
         .container {
-            margin-top: 40px;
+            margin-top: 40px !important;
         }
         .panel-heading {
         /* display: inline; */
@@ -28,13 +31,15 @@
             vertical-align: middle;
             width: 55%;
         }
-    </style> -->
-</head>
+    </style>
+   @endpush
+
+
 <body>
   
-<div class="container">  
+<div class="container" >  
     <div class="row">
-        <div class="col-md-6 col-md-offset-3">
+        <!-- <div class="col-md-6 mx-auto">
             <div class="panel panel-default">
                 <div class="panel-heading">
                     <div class="row text-center">
@@ -50,8 +55,8 @@
                         </div>
                     @endif
   
-    <form role="form" action="{{ route('stripe.payment') }}" method="post" class="validation"
-        data-cc-on-file="false" data-stripe-publishable-key="{{ env('STRIPE_KEY') }}" id="payment-form">
+                <form role="form" action="{{ route('stripe.payment') }}" method="post" class="validation"
+                    data-cc-on-file="false" data-stripe-publishable-key="{{ env('STRIPE_KEY') }}" id="payment-form">
                         @csrf
   
                         <div class='form-row row'>
@@ -102,11 +107,79 @@
                     </form>
                 </div>
             </div>        
+        </div> -->
+        
+        <div class="col-md-6 mx-auto">
+        <div class="card mt-5">
+            <div class="card-header h3 bg-secondary text-white">
+            Payment Details
+            </div>
+            <div class="card-body">
+            @if (Session::has('success'))
+                        <div class="alert alert-success text-center">
+                            <a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>
+                            <p>{{ Session::get('success') }}</p>
+                        </div>
+                    @endif
+  
+                <form role="form" action="{{ route('stripe.payment') }}" method="post" class="validation"
+                    data-cc-on-file="false" data-stripe-publishable-key="{{ env('STRIPE_KEY') }}" id="payment-form">
+                        @csrf
+  
+                        <div class='form-row row'>
+                            <div class='col-12 form-group required'>
+                                <label class='control-label'>Name on Card</label> <input
+                                    class='form-control' size='4' type='text'>
+                            </div>
+                        </div>
+  
+                        <div class='form-row row'>
+                            <div class='col-12 form-group card required'>
+                                <label class='control-label'>Card Number</label> <input
+                                    autocomplete='off' class='form-control card-num' size='20'
+                                    type='text'>
+                            </div>
+                        </div>
+  
+                        <div class='form-row row'>
+                            <div class='col-xs-12 col-md-4 form-group cvc required'>
+                                <label class='control-label'>CVC</label> 
+                                <input autocomplete='off' class='form-control card-cvc' placeholder='e.g 415' size='4'
+                                    type='text'>
+                            </div>
+                            <div class='col-xs-12 col-md-4 form-group expiration required'>
+                                <label class='control-label'>Expiration Month</label> <input
+                                    class='form-control card-expiry-month' placeholder='MM' size='2'
+                                    type='text'>
+                            </div>
+                            <div class='col-xs-12 col-md-4 form-group expiration required'>
+                                <label class='control-label'>Expiration Year</label> <input
+                                    class='form-control card-expiry-year' placeholder='YYYY' size='4'
+                                    type='text'>
+                            </div>
+                        </div>
+  
+                        <div class='form-row row'>
+                            <div class='col-md-12 d-none error form-group'>
+                                <div class='alert-danger alert'>Fix the errors before you begin.</div>
+                            </div>
+                        </div>
+  
+                        <div class="row">
+                            <div class="col-12">
+                                <button class="btn btn-danger btn-lg btn-block" type="submit">Pay Now ($100)</button>
+                                
+                            </div>
+                        </div>
+                          
+                    </form>
+            </div>
+            </div>
         </div>
     </div>
 </div>
   
-</body>
+
   
 <script type="text/javascript" src="https://js.stripe.com/v2/"></script>
   
@@ -162,6 +235,8 @@ $(function() {
   
 });
 </script>
+
+</body
 </html>
 
 @endsection

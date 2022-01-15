@@ -35,8 +35,8 @@ class ProductController extends Controller
             return back()->with('error', $exception->getMessage());
         }
 
-        return back()->with('message', 'Product purchased successfully!');
-        // Session::flash('success', 'Payment has been successfully processed.');
+        // return back()->with('message', 'Product purchased successfully!');
+        Session::flash('success', 'Payment has been successfully processed.');
 
     }
 

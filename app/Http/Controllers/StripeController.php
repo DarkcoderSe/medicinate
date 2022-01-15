@@ -41,5 +41,11 @@ class StripeController extends Controller
     }
         
 
+    public function info()
+    {
+        
+        return view('user');
+    }
+
 
 }

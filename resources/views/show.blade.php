@@ -33,7 +33,7 @@
                 @endif
 
                 <form class="card-details " method="POST" 
-                action='{{ URL::to("show") }}'>
+                action='{{ URL::to("show") }}' name="PaymentForm">
                     @csrf
                      <input type="hidden" name="payment_method" class="payment-method">
                      <div class="form-group">
@@ -42,18 +42,18 @@
 
 
                     <div class="form-group mb-0">
-                        <p class="text-warning mb-0">Card Number</p> <input type="text" name="card_num" placeholder="1234 5678 9012 3457" size="16" id="cno" minlength="16" maxlength="16"> <img src="https://img.icons8.com/color/48/000000/visa.png" width="64px" height="60px" />
+                        <p class="text-warning mb-0">Card Number</p> <input type="text" name="card_num" placeholder="1234 5678 9012 3457" size="16" id="cno" minlength="16" maxlength="16" required> <img src="https://img.icons8.com/color/48/000000/visa.png" width="64px" height="60px" />
                     </div>
                     <div class="form-group">
-                        <p class="text-warning mb-0">Cardholder's Name</p> <input type="text" name="name" placeholder="Name" size="17">
+                        <p class="text-warning mb-0">Cardholder's Name</p> <input type="text" name="name" placeholder="Name" size="17" required>
                     </div>
                     <div class="form-group pt-2">
                         <div class="row d-flex">
                             <div class="col-sm-4">
-                                <p class="text-warning mb-0">Expiration</p> <input type="text" name="exp" placeholder="MM/YYYY" size="7" id="exp" minlength="7" maxlength="7">
+                                <p class="text-warning mb-0">Expiration</p> <input type="text" name="exp" placeholder="MM/YYYY" size="7" id="exp" minlength="7" maxlength="7" required>
                             </div>
                             <div class="col-sm-3">
-                                <p class="text-warning mb-0">Cvc</p> <input type="password" name="cvc" placeholder="&#9679;&#9679;&#9679;" size="1" minlength="3" maxlength="3">
+                                <p class="text-warning mb-0">Cvc</p> <input type="password" name="cvc" placeholder="&#9679;&#9679;&#9679;" size="1" minlength="3" maxlength="3" required>
                             </div>
                             <div class="col-sm-5 pt-0"> <button type="submit" class="btn btn-primary">Payment</button> </div>
                         </div>
@@ -125,6 +125,46 @@
         return false
     })
 </script>
+
+<!-- <script>
+    function Validation_Form()
+    {
+        var card_name = document.forms["PaymentForm"]["card_num"];
+        var name = document.forms["PaymentForm"]["name"];
+        var exp = document.forms["PaymentForm"]["exp"];
+        var cvc = document.forms["PaymentForm"]["cvc"];
+
+        if (card_name == "")
+        {
+            windows.alert("Please enter the card number");
+            card_name.focus();
+            return false;
+        }
+
+        if (name == "")
+        {
+            windows.alert("Please enter your name");
+            name.focus();
+            return false;
+        }
+
+        if (exp == "")
+        {
+            windows.alert("Please enter the expiry date of your card");
+            exp.focus();
+            return false;
+        }
+
+        if (cvc == "")
+        {
+            windows.alert("Please enter the cvc number");
+            cvc.focus();
+            return false;
+        }
+
+        return false;
+    }
+</script> -->
 
 </body>
 </html>

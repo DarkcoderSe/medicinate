@@ -30,12 +30,8 @@ return [
         'region' => env('AWS_DEFAULT_REGION', 'us-east-1'),
     ],
 
-<<<<<<< HEAD
-=======
-
     'stripe' => [
-     'secret' => env('STRIPE_SECRET'),
-     ],
+        'secret' => env('STRIPE_SECRET'),
+        ],
 
->>>>>>> medbranch
 ];

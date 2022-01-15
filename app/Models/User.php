@@ -8,22 +8,14 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laratrust\Traits\LaratrustUserTrait;
 use Laravel\Passport\HasApiTokens;
-<<<<<<< HEAD
-=======
-use Laravel\Cashier\Billable;
->>>>>>> medbranch
 use DateTimeInterface;
-
-
+use Laravel\Cashier\Billable;
 class User extends Authenticatable
 {
     use LaratrustUserTrait;
     use HasFactory, Notifiable;
     use HasApiTokens;
-<<<<<<< HEAD
-=======
     use HasFactory,Billable;
->>>>>>> medbranch
 
     /**
      * The attributes that are mass assignable.
@@ -70,11 +62,6 @@ class User extends Authenticatable
         return $this->belongsToMany(Badge::class, 'student_badges', 'user_id', 'badge_id');
     }
 
-<<<<<<< HEAD
-=======
-
-
->>>>>>> medbranch
     
 
 }
