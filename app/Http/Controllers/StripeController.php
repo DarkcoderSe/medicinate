@@ -41,11 +41,11 @@ class StripeController extends Controller
     }
         
 
-    public function info()
-    {
-        
-        return view('user');
-    }
+    // public function info()
+    // {
+    //     // $intent = auth()->user()->createSetupIntent();
+    //     return view('user');
+    // }
 
 
 }
