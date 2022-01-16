@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\StripeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -33,6 +34,28 @@ Route::namespace('App\\Http\\Controllers')
         Route::post('submit', 'DonationController@submit')->name('submit');
         Route::get('history', 'DonationController@history')->name('history');
     });
+
+// Route::prefix('stripe-payment')
+//         ->name('stripe-payment')
+//         ->middleware('auth')
+//         ->group(function() {
+
+    // Route::get('payment', 'PaymentController@cashier');
+    // // Route::post('submit', 'PaymentController@cashier');
+   Route::post('/show', 'ProductController@purchase')->name('show');
+   Route::get('/show','ProductController@show')->middleware(['auth']);;
+
+   
+  Route::get('/stripe-payment', [StripeController::class, 'handleGet'])->middleware(['auth']);
+  Route::post('/stripe-payment', [StripeController::class, 'handlePost'])->name('stripe.payment');
+
+
+    // Route::get('/user-info','StripeController@info');
+
+
+
+
+    // });
 
     Route::prefix('feedback')
         ->name('feedback.')

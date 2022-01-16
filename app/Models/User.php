@@ -9,13 +9,13 @@ use Illuminate\Notifications\Notifiable;
 use Laratrust\Traits\LaratrustUserTrait;
 use Laravel\Passport\HasApiTokens;
 use DateTimeInterface;
-
-
+use Laravel\Cashier\Billable;
 class User extends Authenticatable
 {
     use LaratrustUserTrait;
     use HasFactory, Notifiable;
     use HasApiTokens;
+    use HasFactory,Billable;
 
     /**
      * The attributes that are mass assignable.
