@@ -1,9 +1,9 @@
-<?php 
+<?php
 
 use Illuminate\Support\Facades\Route;
 
 /**
- * Admin routes 
+ * Admin routes
  * developed by pwh-dcse
  * Admin Login Routes
  */
@@ -16,7 +16,7 @@ Route::middleware('role:administrator')->group(function() {
      * Student CRUD
      */
     Route::prefix('user')->name('user.')->group(function(){
-        
+
         Route::get('/', 'UserController@index')->name('index');
         Route::get('ajax', 'UserController@ajaxIndex')->name('ajax');
         Route::get('create', 'UserController@create')->name('create');
@@ -38,7 +38,7 @@ Route::middleware('role:administrator')->group(function() {
      * Roles CRUD
      */
     Route::prefix('role')->name('role.')->group(function(){
-        
+
         Route::get('/', 'RoleController@index')->name('index');
         Route::get('ajax', 'RoleController@ajaxIndex')->name('ajax');
         Route::get('create', 'RoleController@create')->name('create');
@@ -48,14 +48,14 @@ Route::middleware('role:administrator')->group(function() {
         Route::post('submit', 'RoleController@submit')->name('submit');
         Route::post('update', 'RoleController@update')->name('update');
 
-        
+
     });
 
     /**
      * Permissions CRUD
      */
     Route::prefix('permission')->name('permission.')->group(function(){
-        
+
         Route::get('/', 'PermissionController@index')->name('index');
         Route::get('ajax', 'PermissionController@ajaxIndex')->name('ajax');
         Route::get('create', 'PermissionController@create')->name('create');
@@ -71,7 +71,7 @@ Route::middleware('role:administrator')->group(function() {
      * Preferences CRUD
      */
     Route::prefix('preference')->name('preference.')->group(function(){
-        
+
         Route::get('/', 'PreferenceController@index')->name('index');
         Route::get('ajax', 'PreferenceController@ajaxIndex')->name('ajax');
         Route::get('create', 'PreferenceController@create')->name('create');
@@ -94,7 +94,7 @@ Route::middleware('role:administrator|manager|expert')->group(function(){
      * Badges CRUD
      */
     Route::prefix('badge')->name('badge.')->group(function(){
-        
+
         Route::get('/', 'BadgeController@index')->name('index');
         Route::get('create', 'BadgeController@create')->name('create');
         Route::get('edit/{id}', 'BadgeController@edit')->name('edit');
@@ -109,7 +109,7 @@ Route::middleware('role:administrator|manager|expert')->group(function(){
      * Manufacturer CRUD
      */
     Route::prefix('manufacturer')->name('manufacturer.')->group(function(){
-        
+
         Route::get('/', 'ManufacturerController@index')->name('index');
         Route::get('create', 'ManufacturerController@create')->name('create');
         Route::get('edit/{id}', 'ManufacturerController@edit')->name('edit');
@@ -124,7 +124,7 @@ Route::middleware('role:administrator|manager|expert')->group(function(){
      * Badges CRUD
      */
     Route::prefix('ngo')->name('ngo.')->group(function(){
-        
+
         Route::get('/', 'NgoController@index')->name('index');
         Route::get('create', 'NgoController@create')->name('create');
         Route::get('edit/{id}', 'NgoController@edit')->name('edit');
@@ -155,6 +155,8 @@ Route::middleware('role:administrator|manager|expert')->group(function(){
     Route::prefix('donation')->name('donation.')->group(function(){
 
         Route::get('/', 'DonationController@index')->name('index');
+        Route::get('create', 'DonationController@create');
+        Route::post('update', 'DonationController@update');
         Route::get('status/{s}/{d}', 'DonationController@changeStatus');
         Route::get('delete/{id}', 'DonationController@delete');
     });

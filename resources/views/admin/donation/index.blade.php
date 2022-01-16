@@ -27,14 +27,16 @@
             <div class="card-header">
                 <div class="row">
                     {{-- URL::to is built in laravel function redirect to specific route  --}}
-                    <div class="col-md-4">
-                        
+                    <div class="col-md-4 text-left">
+                        <a href="{{ URL::to('admin/donation/create') }} " class="btn btn-success" >
+                            Make a Donation
+                        </a>
                     </div>
                     <div class="col-md-4 text-center">
-                        
+
                     </div>
-                    <div class="col-md-4">
-                        <a href="{{ URL::to('admin/home') }} " class="btn btn-primary" style="float: right;">
+                    <div class="col-md-4 text-right">
+                        <a href="{{ URL::to('admin/home') }} " class="btn btn-primary" >
                             Back
                         </a>
                         {{-- back button  --}}
@@ -77,20 +79,20 @@
                                         <li> {{ $donation->sealed_packaging ? 'Sealed Packaging' : 'Not In Sealed Packaging' }} </li>
                                         <li> {{ $donation->not_require_refrigeration ? 'Not Require Refrigeration' : 'Required Refrigeration' }} </li>
                                         <li> {{ $donation->shipping_paid ? 'Shipping charges are paid' : 'Not Paid Shipping charges' }} </li>
-                                    
+
                                     </ul>
                                 </td>
                                 <td>
-                                    {{ $donation->donation_weight }} {{ $donation->donation_weight_standard }} / 
+                                    {{ $donation->donation_weight }} {{ $donation->donation_weight_standard }} /
                                     Rs. {{ $donation->expected_cost }}
                                 </td>
                                 <td>
-                                    
+
                                     <!-- Button trigger modal -->
                                     <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#md{{$donation->id}}">
                                         Donated Medicines
                                     </button>
-                                    
+
                                     <!-- Modal -->
                                     <div class="modal fade" id="md{{$donation->id}}" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
                                         <div class="modal-dialog" role="document">
@@ -123,21 +125,31 @@
                                                         </tbody>
                                                     </table>
                                                 </div>
-                                                
+
                                             </div>
                                         </div>
                                     </div>
                                 </td>
                                 <td>
-                                    <ul>
-                                    @if(!is_null($donation->ngos))
-                                        @foreach($donation->ngos as $ngo)
-                                        <li>{{ $ngo->name ?? '' }} </li>
-                                        @endforeach
-                                    @else 
-                                        <li>Any NGO</li>
-                                    @endif
-                                    </ul>
+
+                                    <form action="{{ URL::to('admin/donation/update') }}" method="post">
+                                        @csrf
+                                        <input type="hidden" name="id" value="{{ $donation->id }}">
+                                        <select name="ngos[]" multiple>
+                                            @if(!is_null($ngos))
+                                                @foreach($ngos as $ngo)
+                                                <option value="{{ $ngo->id }}" {{ $donation->ngos->where('id', $ngo->id)->count() > 0 ? 'selected' : '' }}>
+                                                    {{ $ngo->name ?? '' }}
+                                                </option>
+                                                @endforeach
+                                            @endif
+                                            </select> <br>
+                                            <button type="submit" class="btn btn-primary btn-sm mt-2">
+                                                Update NGOs
+                                            </button>
+
+                                    </form>
+
                                 </td>
                                 <td>
                                     @if ($donation->status == 0)
@@ -156,7 +168,7 @@
                                 </td>
                                 <td>
                                     @if($donation->status == 0)
-                                    <a href="{{ URL::to('admin/donation/status/1', $donation->id) }} " class="btn btn-success btn-sm">Accept</a>                 
+                                    <a href="{{ URL::to('admin/donation/status/1', $donation->id) }} " class="btn btn-success btn-sm">Accept</a>
                                     <a href="{{ URL::to('admin/donation/status/2', $donation->id) }} " class="btn btn-danger btn-sm">Reject</a>
                                     @endif
 

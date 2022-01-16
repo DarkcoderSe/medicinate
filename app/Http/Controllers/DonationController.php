@@ -22,6 +22,10 @@ class DonationController extends Controller
         ]);
     }
 
+    public function create() {
+        
+    }
+
     public function history()
     {
         $donations = Donation::where('user_id', auth()->user()->id)->get();
@@ -47,9 +51,9 @@ class DonationController extends Controller
         ]);
 
         DB::beginTransaction();
-        
+
         try {
-            
+
             $donation = new Donation;
             $donation->is_guest = auth()->check() ? 0 : 1;
             $donation->user_id = auth()->user()->id ?? null;
@@ -90,7 +94,7 @@ class DonationController extends Controller
             }
 
 
-            
+
         } catch (\Throwable $th) {
             DB::rollback();
             throw $th;
