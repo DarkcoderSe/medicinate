@@ -33,6 +33,7 @@ Route::namespace('App\\Http\\Controllers')
         Route::get('/', 'DonationController@index')->name('index');
         Route::post('submit', 'DonationController@submit')->name('submit');
         Route::get('history', 'DonationController@history')->name('history');
+        Route::get('donateAmount', 'DonationController@donateAmount')->name('donateAmount');
     });
 
     Route::prefix('feedback')
@@ -46,5 +47,5 @@ Route::namespace('App\\Http\\Controllers')
 //Route::post('products/{id}/purchase', 'ProductController@purchase')->name('products.purchase');
 //Route::get('show',[\App\Http\Controllers\Product\ProductController::class,'show']);
 
-Route::get('payments', [StripController\StripController::class ,'purchasForm']);
+Route::get('payments', [StripController\StripController::class ,'purchasForm'])->middleware(['auth']);
 Route::post('payments', [StripController\StripController::class,'purchas'])->name('payment.post');

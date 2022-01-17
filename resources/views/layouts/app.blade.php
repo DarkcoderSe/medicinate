@@ -58,7 +58,7 @@
                             <a class="nav-link active" href="{{ URL::to('/') }}">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ URL::to('/') }}">Donate Amount</a>
+                            <a class="nav-link" href="{{URL::to('donation/donateAmount')}}">Donate Amount</a>
                         </li>
 
                         <li class="nav-item">

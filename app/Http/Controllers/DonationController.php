@@ -47,9 +47,9 @@ class DonationController extends Controller
         ]);
 
         DB::beginTransaction();
-        
+
         try {
-            
+
             $donation = new Donation;
             $donation->is_guest = auth()->check() ? 0 : 1;
             $donation->user_id = auth()->user()->id ?? null;
@@ -90,7 +90,7 @@ class DonationController extends Controller
             }
 
 
-            
+
         } catch (\Throwable $th) {
             DB::rollback();
             throw $th;
@@ -99,5 +99,9 @@ class DonationController extends Controller
         DB::commit();
         Toastr::success('Your Donation has been sent successfully', 'Donation Sent');
         return redirect()->back();
+    }
+
+    function  donateAmount(){
+        return view('donation.donateAmount');
     }
 }

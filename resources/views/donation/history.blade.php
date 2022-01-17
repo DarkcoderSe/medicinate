@@ -3,7 +3,6 @@
 @section('title', 'Donate a Medicine')
 
 @section('content')
-
 <!-- hero section start -->
 <section class="section hero-section bg-ico-hero" id="home" style="padding-bottom: 0 !important;">
     <div class="bg-overlay bg-primary"></div>
@@ -15,7 +14,7 @@
                     <h4 class="text-white">
                         Lend a helping hand to those in need by donating unused medication or funds to support our work. Your donations stop waste and save lives.
                     </h4>
-                    
+
                 </div>
             </div>
             <div class="col-lg-5 col-md-8 col-sm-10 ml-lg-auto">
@@ -38,7 +37,7 @@
                         <h2>
                             Donation History
                         </h2>
-                    </div> 
+                    </div>
                     <table class="table table-striped">
                         <thead>
                             <tr>
@@ -70,11 +69,11 @@
                                         <li> {{ $donation->sealed_packaging ? 'Sealed Packaging' : 'Not In Sealed Packaging' }} </li>
                                         <li> {{ $donation->not_require_refrigeration ? 'Not Require Refrigeration' : 'Required Refrigeration' }} </li>
                                         <li> {{ $donation->shipping_paid ? 'Shipping charges are paid' : 'Not Paid Shipping charges' }} </li>
-                                    
+
                                     </ul>
                                 </td>
                                 <td>
-                                    {{ $donation->donation_weight }} {{ $donation->donation_weight_standard }} / 
+                                    {{ $donation->donation_weight }} {{ $donation->donation_weight_standard }} /
                                     {{ $donation->expected_cost }}
                                 </td>
                                 <td>
@@ -105,9 +104,9 @@
                             @endforeach
                         </tbody>
                     </table>
-                   
+
                 </div>
-            </div>    
+            </div>
         </div>
     </div>
 </div>
