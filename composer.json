@@ -13,19 +13,13 @@
         "fideloper/proxy": "^4.2",
         "fruitcake/laravel-cors": "^2.0",
         "guzzlehttp/guzzle": "^7.0.1",
-<<<<<<< HEAD
-=======
         "laravel/cashier": "^13.6",
->>>>>>> medbranch
         "laravel/framework": "^8.0",
         "laravel/passport": "^10.1",
         "laravel/tinker": "^2.0",
         "laravel/ui": "^3.2",
         "santigarcor/laratrust": "^6.3",
-<<<<<<< HEAD
-=======
         "stripe/stripe-php": "^7.110",
->>>>>>> medbranch
         "yajra/laravel-datatables-oracle": "~9.0"
     },
     "require-dev": {
