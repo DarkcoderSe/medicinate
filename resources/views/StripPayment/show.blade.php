@@ -69,40 +69,69 @@
                           data-stripe-publishable-key="{{ env('STRIPE_KEY') }}"
                           id="payment-form">
                         @csrf
-
                         <div class='form-row row'>
-                            <div class='col-xs-12 form-group required'>
-                                <label class='control-label'>Name on Card</label> <input
-                                    class='form-control' size='4' type='text'>
+                            <div class='col-xs-6 col-md-6 form-group required'>
+                                <label class='control-label'>Name </label> <input
+                                    class='form-control'  type='input' name="name">
+                            </div>
+                            <div class='col-xs-6 col-md-6 form-group required'>
+                                <label class='control-label'>Email </label> <input
+                                    class='form-control'  type='email' name="email">
                             </div>
                         </div>
 
+{{--                        <div class='form-row row'>--}}
+{{--                            <div class='col-xs-6 form-group required'>--}}
+{{--                                <label class='control-label'>Name on Card</label> <input--}}
+{{--                                    class='form-control'  type='text'>--}}
+{{--                            </div>--}}
+
+{{--                        </div>--}}
+
                         <div class='form-row row'>
-                            <div class='col-xs-12 form-group card required'>
+                            <div class='col-xs-6 col-md-6 form-group card required'>
                                 <label class='control-label'>Card Number</label> <input
-                                    autocomplete='off' class='form-control card-num' size='20'
-                                    type='text'>
+                                    autocomplete='off' class='form-control card-num'
+                                    type='text' name="cardNumber">
+                            </div>
+                            <div class='col-xs-6 col-md-6 form-group cvc required'>
+                                <label class='control-label'>CVC</label>
+                                <input autocomplete='off' class='form-control card-cvc' placeholder='e.g 415'
+                                       type='text' name="cvc">
                             </div>
                         </div>
 
+{{--                        <div class='form-row row'>--}}
+
+{{--                         --}}
+{{--                            <div class='col-xs-6 col-md-6 form-group expiration required'>--}}
+{{--                                <label class='control-label'>Expiration Year</label> <input--}}
+{{--                                    class='form-control card-expiry-year' placeholder='YYYY' size='4'--}}
+{{--                                    type='text'>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
                         <div class='form-row row'>
-                            <div class='col-xs-12 col-md-4 form-group cvc required'>
-                                <label class='control-label'>CVC</label>
-                                <input autocomplete='off' class='form-control card-cvc' placeholder='e.g 415' size='4'
-                                       type='text'>
-                            </div>
-                            <div class='col-xs-12 col-md-4 form-group expiration required'>
+                            <div class='col-xs-6 col-md-6 form-group expiration required'>
                                 <label class='control-label'>Expiration Month</label> <input
                                     class='form-control card-expiry-month' placeholder='MM' size='2'
-                                    type='text'>
+                                    type='date' name="expirationDate">
                             </div>
-                            <div class='col-xs-12 col-md-4 form-group expiration required'>
-                                <label class='control-label'>Expiration Year</label> <input
-                                    class='form-control card-expiry-year' placeholder='YYYY' size='4'
-                                    type='text'>
+                            <div class='col-xs-6 col-md-6 form-group expiration required'>
+                                <label class='control-label'>Amount</label> <select
+                                    class='form-control card-expiry-month' placeholder='10$-100$'>
+                                <option >$10</option>
+                                <option >$20</option>
+                                <option >$30</option>
+                                <option >$40</option>
+                                <option >$50</option>
+                                <option >$60</option>
+                                <option >$70</option>
+                                <option >$80</option>
+                                <option >$90</option>
+                                <option >$100</option>
+                            </select>
                             </div>
                         </div>
-
 {{--                        <div class='form-row row'>--}}
 {{--                            <div class='col-md-12 hide error form-group'>--}}
 {{--                                <div class='alert-danger alert'>Fix the errors before you begin.</div>--}}
