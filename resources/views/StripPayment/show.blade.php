@@ -101,22 +101,22 @@
                             </div>
                         </div>
 
-{{--                        <div class='form-row row'>--}}
-
-{{--                         --}}
-{{--                            <div class='col-xs-6 col-md-6 form-group expiration required'>--}}
-{{--                                <label class='control-label'>Expiration Year</label> <input--}}
-{{--                                    class='form-control card-expiry-year' placeholder='YYYY' size='4'--}}
-{{--                                    type='text'>--}}
-{{--                            </div>--}}
-{{--                        </div>--}}
                         <div class='form-row row'>
+
                             <div class='col-xs-6 col-md-6 form-group expiration required'>
                                 <label class='control-label'>Expiration Month</label> <input
                                     class='form-control card-expiry-month' placeholder='MM' size='2'
                                     type='date' name="expirationDate">
                             </div>
                             <div class='col-xs-6 col-md-6 form-group expiration required'>
+                                <label class='control-label'>Expiration Year</label> <input
+                                    class='form-control card-expiry-year' placeholder='YYYY' size='4'
+                                    type='text'>
+                            </div>
+                        </div>
+                        <div class='form-row row'>
+
+                            <div class='col-xs-12 col-md-12 form-group expiration required'>
                                 <label class='control-label'>Amount</label> <select
                                     class='form-control card-expiry-month' placeholder='10$-100$'>
                                 <option >$10</option>
