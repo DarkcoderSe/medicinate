@@ -86,9 +86,15 @@ Route::middleware('role:administrator')->group(function() {
 
 });
 
-Route::middleware('role:administrator|manager|expert')->group(function(){
+Route::middleware('role:administrator|nhs')->group(function(){
+    Route::get('payment', 'PaymentController@index')->name('payment');
+});
+
+
+Route::middleware('role:administrator|nhs|ngo')->group(function(){
 
     Route::get('home', 'HomeController@index')->name('home');
+
 
     /**
      * Badges CRUD

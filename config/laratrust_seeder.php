@@ -13,28 +13,21 @@ return [
 
     'roles_structure' => [
         'administrator' => [
-            'users' => 'c,r,u,d',
-            'reported-issues' => 'c,r,u,d',
+            'donation' => 'c,r,u,d',
+            'ngo' => 'c,r,u,d',
             'feedback' => 'c,r,u,d',
-            'catalog' => 'c,r,u,d',
-            'category' => 'c,r,u,d',
-            'tools' => 'c,r,u,d', 
-            'general' => 'c,r,u,d',
+            'manufacturer' => 'c,r,u,d',
+            'setting' => 'c,r,u,d',
+            'profile' => 'c,r,u,d'
+        ],
+        'nhs' => [
+            'donation' => 'c,r,u,d',
+            'ngo' => 'c,r,u,d',
+            'feedback' => 'c,r,u,d',
             'profile' => 'r,u'
         ],
-        'manager' => [
-            'users' => 'r,u',
-            'reported-issues' => 'c,r,u',
-            'feedback' => 'c,r,u',
-            'catalog' => 'c,r,u',
-            'category' => 'c,r,u', 
-            'general' => 'c,r,u',
-            'profile' => 'r,u'
-        ],
-        'expert' => [
-            'catalog' => 'r,u',
-            'general' => 'r,u',
-            'profile' => 'r,u'
+        'ngo' => [
+            'donation' => 'r,u'
         ],
         'member' => [
             'profile' => 'r,u',

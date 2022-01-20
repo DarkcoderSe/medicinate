@@ -3,6 +3,10 @@
 @section('title', 'Manufacturers List')
 @section('content')
 
+@php
+    $user = auth()->user();
+@endphp
+
 <!-- start page title -->
 <div class="row">
     <div class="col-12">
@@ -29,11 +33,13 @@
                     {{-- URL::to is built in laravel function redirect to specific route  --}}
                     <div class="col-md-4">
 
+                        @if ($user->isAbleTo('manufacturer-create'))
+
                         <!-- Button trigger modal -->
                         <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modelId">
                           Add New Manufacturer
                         </button>
-                        
+
                         <!-- Modal -->
                         <div class="modal fade" id="modelId" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
                             <div class="modal-dialog" role="document">
@@ -46,7 +52,7 @@
                                     </div>
                                     <div class="modal-body">
                                         <form action="{{ URL::to('admin/manufacturer/submit') }} " method="post">
-                                            @csrf 
+                                            @csrf
                                             <div class="form-row">
                                                 <div class="form-group col-md-12">
                                                     <label>Name</label>
@@ -74,14 +80,16 @@
                                             <button type="submit" class="btn btn-success">Submit</button>
                                         </form>
                                     </div>
-                                  
+
                                 </div>
                             </div>
                         </div>
+
+                        @endif
                         {{-- add new manufacturer button  --}}
                     </div>
                     <div class="col-md-4 text-center">
-                        
+
                     </div>
                     <div class="col-md-4">
                         <a href="{{ URL::to('admin/home') }} " class="btn btn-primary" style="float: right;">
@@ -123,9 +131,11 @@
                                 <td>
                                     {!! $manufacturer->address !!}
                                 </td>
+
+                                @if ($user->isAbleTo('manufacturer-delete'))
                                 <td>
                                     <ul class="list-inline font-size-20 contact-links mb-0">
-                                    
+
                                         <li class="list-inline-item px-2">
                                             <a class="text-danger" href="{{ URL::to('admin/manufacturer/delete', $manufacturer->id) }} " data-toggle="tooltip" data-placement="top" title="Delete">
                                                 <i class="bx bx-trash"></i>
@@ -133,9 +143,10 @@
                                         </li>
                                     </ul>
                                 </td>
+                                @endif
                             </tr>
                             @endforeach
-                            
+
                         </tbody>
                     </table>
                 </div>

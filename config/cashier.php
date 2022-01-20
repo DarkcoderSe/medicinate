@@ -13,9 +13,9 @@ return [
     |
     */
 
-    'key' => env('STRIPE_KEY'),
+    'key' => env('pk_test_51KFN2cBT9ZQqIPsmuHKvpGKyGW5wvDjFD6PnsnMQfbYnDlXQidbJSQsM6TzsIBEBTGB0jpayvthG1XfuzbtxLuZh00vI7Bf143'),
 
-    'secret' => env('STRIPE_SECRET'),
+    'secret' => env('sk_test_51KFN2cBT9ZQqIPsm97rZgYD58G3aokaOaH6q49wORAcRybl9fzUTAD6gRomkJdRZia2nCBdbzACzVQSVAfnNPfiv0034HRKRpP'),
 
     /*
     |--------------------------------------------------------------------------

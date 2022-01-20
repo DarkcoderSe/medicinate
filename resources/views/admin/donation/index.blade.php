@@ -3,6 +3,10 @@
 @section('title', 'Donation List')
 @section('content')
 
+@php
+    $user = auth()->user();
+@endphp
+
 <!-- start page title -->
 <div class="row">
     <div class="col-12">
@@ -28,9 +32,11 @@
                 <div class="row">
                     {{-- URL::to is built in laravel function redirect to specific route  --}}
                     <div class="col-md-4 text-left">
+                        @if ($user->isAbleTo('donation-create'))
                         <a href="{{ URL::to('admin/donation/create') }} " class="btn btn-success" >
                             Make a Donation
                         </a>
+                        @endif
                     </div>
                     <div class="col-md-4 text-center">
 
@@ -132,6 +138,8 @@
                                 </td>
                                 <td>
 
+                                    @if ($user->isAbleTo('donation-update'))
+
                                     <form action="{{ URL::to('admin/donation/update') }}" method="post">
                                         @csrf
                                         <input type="hidden" name="id" value="{{ $donation->id }}">
@@ -149,6 +157,7 @@
                                             </button>
 
                                     </form>
+                                    @endif
 
                                 </td>
                                 <td>

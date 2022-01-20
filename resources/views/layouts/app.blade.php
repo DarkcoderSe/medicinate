@@ -2,7 +2,7 @@
 <html lang="en">
 
     <head>
-        
+
         <meta charset="utf-8" />
         <title>
             @yield('title')Online Donation Unused Medicines for NGOs
@@ -18,8 +18,8 @@
 
         <!-- Bootstrap Css -->
         <link href="{{asset('admin/assets/css/bootstrap.min.css')}}" id="bootstrap-style" rel="stylesheet" type="text/css" />
-        
-               
+
+
         <!-- Icons Css -->
         <link href="{{asset('admin/assets/css/icons.min.css')}}" rel="stylesheet" type="text/css" />
         <!-- App Css-->
@@ -52,20 +52,17 @@
                 <button type="button" class="btn btn-sm px-3 font-size-16 d-lg-none header-item waves-effect waves-light" data-toggle="collapse" data-target="#topnav-menu-content">
                     <i class="fa fa-fw fa-bars"></i>
                 </button>
-              
+
                 <div class="collapse navbar-collapse" id="topnav-menu-content">
                     <ul class="navbar-nav ml-auto" id="topnav-menu" >
                         <li class="nav-item">
                             <a class="nav-link active" href="{{ URL::to('/') }}">Home</a>
                         </li>
-                    
+
                         <li class="nav-item">
                             <a class="nav-link" href="{{ URL::to('donation') }}">Donate Medicines</a>
                         </li>
 
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ URL::to('user-info') }}">User's Info</a>
-                        </li>
 
 
                         <li class="nav-item">
@@ -94,7 +91,7 @@
                     <div class="ml-lg-2">
                         <a href="{{ URL::to('register') }}" class="btn btn-link text-light os w-xs">Register</a>
                     </div>
-                    @else 
+                    @else
                     <div class="ml-lg-2 mr-2">
                         <a href="javascript:void(0);" class="text-light os w-xs">{{ auth()->user()->name ?? '' }}</a>
 
@@ -104,7 +101,7 @@
                         <form id='logout-form' action="{{route('logout')}}" method='POST'>
                             @csrf
                         </form>
-                    
+
                     </div>
                     @endguest
                 </div>
@@ -121,7 +118,7 @@
                         <div class="mb-4">
                             <img src="assets/images/logo-light.png" alt="" height="20">
                         </div>
-    
+
                         <p class="mb-2">2020 © Online Unused Medicine Donation for NGOs</p>
                     </div>
 

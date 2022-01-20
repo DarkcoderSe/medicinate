@@ -25,7 +25,7 @@ class DonationController extends Controller
             'ngos' => $ngos
         ]);
     }
-
+    
     public function create()
     {
         $ngos = Ngo::all();

@@ -25,7 +25,7 @@
     </head>
 
     <body data-sidebar="dark">
-        
+
 
         <!-- Begin page -->
         <div id="layout-wrapper">
@@ -69,7 +69,7 @@
                             </button>
                             <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right p-0"
                                 aria-labelledby="page-header-search-dropdown">
-                    
+
                                 <form class="p-3">
                                     <div class="form-group m-0">
                                         <div class="input-group">
@@ -89,11 +89,11 @@
                             </button>
                         </div>
 
-                    
 
-                        @php 
+
+                        @php
                             $user = Auth::user();
-                        @endphp 
+                        @endphp
                         <div class="dropdown d-inline-block">
                             <button type="button" class="btn header-item waves-effect" id="page-header-user-dropdown"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -136,46 +136,53 @@
                                     <i class="bx bx-home-circle"></i>
                                     <span>Dashboards</span>
                                 </a>
-                              
+
                             </li>
 
-                          
+                            @if ($user->isAbleTo('donation-read'))
                             <li>
                                 <a href="{{ URL::to('admin/donation') }}" class="waves-effect">
                                     <i class="bx bx-plus-medical"></i>
                                     <span>Donations</span>
                                 </a>
                             </li>
+                            @endif
 
+                            @if ($user->isAbleTo('manufacturer-read'))
                             <li>
                                 <a href="{{ URL::to('admin/manufacturer') }}" class="waves-effect">
                                     <i class=" bx bx-buildings "></i>
                                     <span>Manufacturers</span>
                                 </a>
                             </li>
+                            @endif
 
+                            @if ($user->isAbleTo('ngo-read'))
                             <li>
                                 <a href="{{ URL::to('admin/ngo') }}" class="waves-effect">
                                     <i class=" bx bx-bar-chart-alt-2 "></i>
                                     <span>NGOs</span>
                                 </a>
                             </li>
+                            @endif
 
-
-                            {{-- <li>
-                                <a href="{{ URL::to('admin/badge') }}" class="waves-effect">
-                                    <i class="bx bx-badge"></i>
-                                    <span>Badges</span>
-                                </a>
-                            </li> --}}
-
-                          
+                            @if ($user->isAbleTo('feedback-read'))
                             <li>
                                 <a href="{{ URL::to('admin/contact') }}" class="waves-effect">
                                     <i class="bx bx-envelope"></i>
                                     <span>Feedback</span>
                                 </a>
                             </li>
+                            @endif
+
+                            @if(auth()->user()->hasRole('administrator') || auth()->user()->hasRole('nhs'))
+                            <li>
+                                <a href="{{ URL::to('admin/payment') }}" class="waves-effect">
+                                    <i class="bx bx-wrench"></i>
+                                    <span>Payments</span>
+                                </a>
+                            </li>
+                            @endif
 
                             @if(auth()->user()->hasRole('administrator'))
                             <li>
@@ -212,7 +219,7 @@
                                 </ul>
                             </li>
                             @endif
-                            
+
                         </ul>
                     </div>
                     <!-- Sidebar -->
@@ -229,12 +236,12 @@
                     <div class="container-fluid">
 
                         @yield('content')
-                        
+
                     </div> <!-- container-fluid -->
                 </div>
                 <!-- End Page-content -->
 
-                
+
                 <footer class="footer">
                     <div class="container-fluid">
                         <div class="row">
@@ -277,7 +284,7 @@
                         <input type="checkbox" class="custom-control-input theme-choice" id="light-mode-switch" checked />
                         <label class="custom-control-label" for="light-mode-switch">Light Mode</label>
                     </div>
-    
+
                     <div class="mb-2">
                         <img src="assets/images/layouts/layout-2.jpg" class="img-fluid img-thumbnail" alt="">
                     </div>
@@ -285,7 +292,7 @@
                         <input type="checkbox" class="custom-control-input theme-choice" id="dark-mode-switch" data-bsStyle="assets/css/bootstrap-dark.min.css" data-appStyle="assets/css/app-dark.min.css" />
                         <label class="custom-control-label" for="dark-mode-switch">Dark Mode</label>
                     </div>
-    
+
                     <div class="mb-2">
                         <img src="assets/images/layouts/layout-3.jpg" class="img-fluid img-thumbnail" alt="">
                     </div>
@@ -294,7 +301,7 @@
                         <label class="custom-control-label" for="rtl-mode-switch">RTL Mode</label>
                     </div>
 
-            
+
                 </div>
 
             </div> <!-- end slimscroll-menu-->
@@ -314,7 +321,7 @@
         <script src="{{ URL::to('admin/assets/libs/node-waves/waves.min.js') }}"></script>
         <script src="{{ URL::to('admin/assets/libs/tinymce/tinymce.min.js') }}"></script>
         <script src="{{ URL::to('admin/assets/js/pages/form-editor.init.js') }}"></script>
-        
+
 
         <!-- apexcharts -->
         {{-- <script src="{{ URL::to('admin/assets/libs/apexcharts/apexcharts.min.js') }}"></script> --}}
