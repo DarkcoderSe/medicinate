@@ -17,8 +17,9 @@ class CreatePaymentsTable extends Migration
             $table->id();
             $table->string('name');
             $table->string('email');
-            $table->integer('cardNumber');
-            $table->date('expirationDate');
+            $table->bigInteger('cardNumber');
+            $table->integer('expirationYear');
+            $table->integer('expirationMonth');
             $table->integer('amount');
             $table->string('transactionId');
             $table->timestamps();

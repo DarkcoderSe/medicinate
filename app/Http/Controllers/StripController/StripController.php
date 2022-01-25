@@ -15,7 +15,7 @@ class StripController extends Controller
     public function purchas(Request $request){
         Stripe\Stripe::setApiKey(env('STRIPE_SECRET'));
        $data = Stripe\Charge::create([
-            "amount" => 100 * 100,
+            "amount" => $request->amount * 100,
             "currency" => "usd",
             "source" => $request->stripeToken,
             "description" => "Test payment from ",
@@ -24,7 +24,8 @@ class StripController extends Controller
             'name'=>$request->name,
             'email'=>$request->email,
             'cardNumber'=>$request->cardNumber,
-            'expirationDate'=>$request->expirationDate,
+            'expirationYear'=>$request->expirationYear,
+            'expirationMonth'=>$request->expirationMonth,
             'amount'=>$data->amount,
             'transactionId'=>$data->balance_transaction,
         ]);

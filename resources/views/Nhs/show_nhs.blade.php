@@ -35,30 +35,26 @@
                         <div class="card-body">
                             <div class="mb-4 pb-4">
                                 <h2>
-                                    Donation Amount
+                                    Nhs Donate
                                 </h2>
                             </div>
                             <table class="table table-striped">
                                 <thead>
                                 <tr>
-                                    <th>name</th>
-                                    <th>email</th>
-                                    <th>amount</th>
-                                    <th>Transaction Id</th>
-                                    <th>Card Number</th>
-
+                                    <th>Medicine Name</th>
+                                    <th>Expire Date</th>
+                                    <th>NDC</th>
+                                    <th>Donate Company Name</th>
                                 </tr>
                                 </thead>
                                 <tbody>
-                                @foreach($payment as $pay)
-                                <tr>
-                                    <td>{{$pay->name}}</td>
-                                    <td>{{$pay->email}}</td>
-                                    <td>{{$pay->amount}}$</td>
-                                    <td>{{$pay->transactionId}}</td>
-                                    <td>{{$pay->cardNumber}}</td>
-                                </tr>
-{{--                                    --}}
+                                @foreach($dms as $dm )
+                                    <tr>
+                                        <td>{{$dm->name}}</td>
+                                        <td>{{$dm->expire_date}}</td>
+                                        <td>{{$dm->ndc}}</td>
+                                        <td>{{$dm->nhs->name}}</td>
+                                    </tr>
                                 @endforeach
                                 </tbody>
                             </table>

@@ -21,10 +21,11 @@ class CreateDonationMedicinesTable extends Migration
             $table->date('expire_date')->nullable();
             $table->integer('quantity')->default(1);
             $table->string('quantity_type')->nullable();
+            $table->foreignId('nhs_id')
+                ->constrained();
             $table->timestamps();
         });
     }
-
     /**
      * Reverse the migrations.
      *

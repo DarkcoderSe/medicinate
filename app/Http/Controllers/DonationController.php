@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Payment;
 use Illuminate\Http\Request;
 
 use App\Models\Donation;
@@ -102,6 +103,7 @@ class DonationController extends Controller
     }
 
     function  donateAmount(){
-        return view('donation.donateAmount');
+        $payment =Payment::all();
+        return view('donation.donateAmount')->with('payment',$payment);
     }
 }

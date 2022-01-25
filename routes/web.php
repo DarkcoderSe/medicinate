@@ -19,6 +19,8 @@ Route::get('/', function () {
 });
 
 Auth::routes();
+// Agency Registeration
+Route::get('agencyRegister',[\App\Http\Controllers\Auth\RegisterController::class,'agnecyRegister']);
 
 Route::namespace('App\\Http\\Controllers')
     ->group(function() {
@@ -49,3 +51,8 @@ Route::namespace('App\\Http\\Controllers')
 
 Route::get('payments', [StripController\StripController::class ,'purchasForm'])->middleware(['auth']);
 Route::post('payments', [StripController\StripController::class,'purchas'])->name('payment.post');
+//Nhs
+Route::resource('nhs',\App\Http\Controllers\NhsController::class)->middleware(['auth']);
+
+
+

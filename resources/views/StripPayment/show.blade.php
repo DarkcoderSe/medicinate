@@ -45,7 +45,6 @@
         <!-- end container -->
     </section>
     <!-- hero section end -->
-
 <div class="container p-5">
     <div class="row">
         <div class="col-md-6 col-md-offset-3">
@@ -79,7 +78,6 @@
                                     class='form-control'  type='email' name="email">
                             </div>
                         </div>
-
 {{--                        <div class='form-row row'>--}}
 {{--                            <div class='col-xs-6 form-group required'>--}}
 {{--                                <label class='control-label'>Name on Card</label> <input--}}
@@ -87,7 +85,6 @@
 {{--                            </div>--}}
 
 {{--                        </div>--}}
-
                         <div class='form-row row'>
                             <div class='col-xs-6 col-md-6 form-group card required'>
                                 <label class='control-label'>Card Number</label> <input
@@ -100,35 +97,38 @@
                                        type='text' name="cvc">
                             </div>
                         </div>
-
                         <div class='form-row row'>
-
                             <div class='col-xs-6 col-md-6 form-group expiration required'>
                                 <label class='control-label'>Expiration Month</label> <input
                                     class='form-control card-expiry-month' placeholder='MM' size='2'
-                                    type='date' name="expirationDate">
+                                    type='text' name="expirationMonth">
                             </div>
                             <div class='col-xs-6 col-md-6 form-group expiration required'>
                                 <label class='control-label'>Expiration Year</label> <input
                                     class='form-control card-expiry-year' placeholder='YYYY' size='4'
-                                    type='text'>
+                                    type='text' name="expirationYear">
                             </div>
+{{--                            <div class='col-xs-6 col-md-6 form-group expiration required'>--}}
+{{--                                <label class='control-label'>Expiration Date</label> <input--}}
+{{--                                    class='form-control card-expiry-month' placeholder='MM' size='2'--}}
+{{--                                    type='date' name="expirationDate">--}}
+{{--                            </div>--}}
                         </div>
                         <div class='form-row row'>
 
                             <div class='col-xs-12 col-md-12 form-group expiration required'>
                                 <label class='control-label'>Amount</label> <select
-                                    class='form-control card-expiry-month' placeholder='10$-100$'>
-                                <option >$10</option>
-                                <option >$20</option>
-                                <option >$30</option>
-                                <option >$40</option>
-                                <option >$50</option>
-                                <option >$60</option>
-                                <option >$70</option>
-                                <option >$80</option>
-                                <option >$90</option>
-                                <option >$100</option>
+                                    class='form-control card-expiry-month' placeholder='10$-100$' name="amount">
+                                <option value="10" >$10</option>
+                                <option value="20" >$20</option>
+                                <option value="30">$30</option>
+                                <option value="40">$40</option>
+                                <option value="50">$50</option>
+                                <option value="60">$60</option>
+                                <option value="70">$70</option>
+                                <option value="80">$80</option>
+                                <option value="90" >$90</option>
+                                <option value="100">$100</option>
                             </select>
                             </div>
                         </div>
@@ -137,10 +137,9 @@
 {{--                                <div class='alert-danger alert'>Fix the errors before you begin.</div>--}}
 {{--                            </div>--}}
 {{--                        </div>--}}
-
                         <div class="row">
                             <div class="col-xs-12">
-                                <button class="btn btn-primary btn-lg btn-block" type="submit">Pay Now </button>
+                                <button class="btn btn-primary btn-lg btn-block pull-left" type="submit">Pay Now </button>
                             </div>
                         </div>
 

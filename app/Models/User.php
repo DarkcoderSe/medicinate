@@ -62,6 +62,9 @@ class User extends Authenticatable
     public function badges(){
         return $this->belongsToMany(Badge::class, 'student_badges', 'user_id', 'badge_id');
     }
+//    public function payments(){
+//        return $this->hasMany(Payment::class);
+//    }
 
 
 

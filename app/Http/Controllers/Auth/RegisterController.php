@@ -76,4 +76,7 @@ class RegisterController extends Controller
         return $user;
 
     }
+    public function agnecyRegister(){
+        return 'register agency';
+    }
 }
